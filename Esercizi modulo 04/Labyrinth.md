@@ -8,7 +8,7 @@ Possiamo rappresentare un labirinto come una matrice di caratteri, in cui il car
 
 
 
-![Possibile labirinto](./immagini/preview.png)
+![Possibile labirinto](./Immagini/preview.png)
 
 
 
@@ -24,4 +24,4 @@ Fate in modo che il computer sia in grado di risolvere da solo il labirinto.
 
 
 
-![test](./immagini/laby.gif)
+![test](./Immagini/laby.gif)
