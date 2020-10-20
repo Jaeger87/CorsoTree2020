@@ -6,5 +6,5 @@ This repo collects all the excercises produced and gathered by [Andrea Rosati](h
 
 | Module | Subject | Name                                                                                      |
 |--------|---------|-------------------------------------------------------------------------------------------|
-| 4      | Cycles  | [Labirinth](https://github.com/Jaeger87/CorsoTree2020/tree/master/Esercizi%20modulo%2004) |
+| 4      | Cycles  | [Labirinth](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_04) |
 |        |         |                                                                                           |
