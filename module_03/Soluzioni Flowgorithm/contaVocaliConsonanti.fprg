@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="andre"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-18 01:11:54 "/>
+        <attribute name="created" value="YW5kcmU7REVTS1RPUC1PUzc5VDMwOzIwMjAtMTAtMTg7IjAxOjA0OjM0ICI7Mjc0Mw=="/>
+        <attribute name="edited" value="YW5kcmU7REVTS1RPUC1PUzc5VDMwOzIwMjAtMTAtMTg7IjAxOjExOjU0ICI7MjsyODUy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="risultati" type="Integer" array="True" size="2"/>
+            <declare name="parola" type="String" array="False" size=""/>
+            <input variable="parola"/>
+            <call expression="contaVocaliConsonanti(parola, risultati)"/>
+            <output expression="&quot;vocali:&quot; &amp; risultati[0]" newline="True"/>
+            <output expression="&quot;consonanti:&quot; &amp; risultati[1]" newline="True"/>
+        </body>
+    </function>
+    <function name="contaVocaliConsonanti" type="None" variable="">
+        <parameters>
+            <parameter name="parola" type="String" array="False"/>
+            <parameter name="risultati" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="risultati[0]" expression="0"/>
+            <assign variable="risultati[1]" expression="0"/>
+            <for variable="i" start="0" end="len(parola) - 1" direction="inc" step="1">
+                <if expression="char(parola, i) == &quot;a&quot; or char(parola, i) == &quot;e&quot; or char(parola, i) == &quot;i&quot; or char(parola, i) == &quot;o&quot; or char(parola, i) == &quot;u&quot;">
+                    <then>
+                        <assign variable="risultati[0]" expression="risultati[0] + 1"/>
+                    </then>
+                    <else>
+                        <assign variable="risultati[1]" expression="risultati[1] + 1"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

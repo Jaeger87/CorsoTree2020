@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="andre"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-17 08:58:22 "/>
+        <attribute name="created" value="YW5kcmU7REVTS1RPUC1PUzc5VDMwOzIwMjAtMTAtMTc7IjA3OjM2OjIwICI7Mjc0OA=="/>
+        <attribute name="edited" value="YW5kcmU7REVTS1RPUC1PUzc5VDMwOzIwMjAtMTAtMTc7IjA4OjU4OjIyICI7MzsyODY1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="array1" type="Integer" array="True" size="3"/>
+            <declare name="array2" type="Integer" array="True" size="5"/>
+            <call expression="riempiArray(array1)"/>
+            <call expression="riempiArray(array2)"/>
+            <declare name="fuso" type="Integer" array="True" size="size(array1) + size(array2)"/>
+            <call expression="fondiArray(array1, array2, fuso)"/>
+            <output expression="fuso[0]" newline="True"/>
+            <output expression="stampaArray(fuso)" newline="True"/>
+        </body>
+    </function>
+    <function name="fondiArray" type="None" variable="">
+        <parameters>
+            <parameter name="primo" type="Integer" array="True"/>
+            <parameter name="secondo" type="Integer" array="True"/>
+            <parameter name="fuso" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="indexF" type="Integer" array="False" size=""/>
+            <assign variable="indexF" expression="0"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="size(primo) - 1" direction="inc" step="1">
+                <assign variable="fuso[i]" expression="primo[i]"/>
+                <assign variable="indexF" expression="i"/>
+            </for>
+            <assign variable="indexF" expression="indexF + 1"/>
+            <for variable="i" start="0" end="size(secondo) - 1" direction="inc" step="1">
+                <assign variable="fuso[indexF]" expression="secondo[i]"/>
+                <assign variable="indexF" expression="indexF + 1"/>
+            </for>
+        </body>
+    </function>
+    <function name="riempiArray" type="None" variable="">
+        <parameters>
+            <parameter name="array" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="size(array) - 1" direction="inc" step="1">
+                <input variable="array[i]"/>
+            </for>
+        </body>
+    </function>
+    <function name="stampaArray" type="String" variable="printable">
+        <parameters>
+            <parameter name="array" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="printable" type="String" array="False" size=""/>
+            <assign variable="printable" expression="&quot;[&quot;"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="size(array) - 1" direction="inc" step="1">
+                <output expression="array[i]" newline="True"/>
+                <assign variable="printable" expression="printable &amp; array[i] &amp; &quot;, &quot;"/>
+            </for>
+            <assign variable="printable" expression="printable &amp; &quot;]&quot;"/>
+        </body>
+    </function>
+</flowgorithm>

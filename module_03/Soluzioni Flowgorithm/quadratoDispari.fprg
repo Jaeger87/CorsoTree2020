@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="andre"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-17 07:31:08 "/>
+        <attribute name="created" value="YW5kcmU7REVTS1RPUC1PUzc5VDMwOzIwMjAtMTAtMTc7IjA3OjI0OjE1ICI7Mjc0OQ=="/>
+        <attribute name="edited" value="YW5kcmU7REVTS1RPUC1PUzc5VDMwOzIwMjAtMTAtMTc7IjA3OjMxOjA4ICI7MTsyODU3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <output expression="calcolaQuadrato(n)" newline="True"/>
+        </body>
+    </function>
+    <function name="calcolaQuadrato" type="Integer" variable="quadrato">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <if expression="n &lt; 0">
+                <then>
+                    <assign variable="n" expression="Abs(n)"/>
+                </then>
+                <else/>
+            </if>
+            <declare name="quadrato" type="Integer" array="False" size=""/>
+            <assign variable="quadrato" expression="0"/>
+            <declare name="dispari" type="Integer" array="False" size=""/>
+            <assign variable="dispari" expression="1"/>
+            <while expression="n &gt; 0">
+                <assign variable="quadrato" expression="quadrato + dispari"/>
+                <assign variable="n" expression="n - 1"/>
+                <assign variable="dispari" expression="dispari + 2"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

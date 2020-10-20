@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="andre"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-17 09:27:11 "/>
+        <attribute name="created" value="YW5kcmU7REVTS1RPUC1PUzc5VDMwOzIwMjAtMTAtMTc7IjA4OjU4OjI1ICI7Mjc1OA=="/>
+        <attribute name="edited" value="YW5kcmU7REVTS1RPUC1PUzc5VDMwOzIwMjAtMTAtMTc7IjA5OjI3OjExICI7NDsyODYx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="D" type="Integer" array="False" size=""/>
+            <input variable="D"/>
+            <declare name="arrayD" type="Integer" array="True" size="D"/>
+            <call expression="riempiArray(arrayD)"/>
+            <declare name="N" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <declare name="trovato" type="Boolean" array="False" size=""/>
+            <assign variable="trovato" expression="false"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="size(arrayD) - 1" direction="inc" step="1">
+                <if expression="arrayD[i] == N">
+                    <then>
+                        <assign variable="trovato" expression="true"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <if expression="trovato">
+                <then>
+                    <output expression="&quot;TROVATO!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;No, non c'era&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="riempiArray" type="None" variable="">
+        <parameters>
+            <parameter name="array" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="size(array) - 1" direction="inc" step="1">
+                <input variable="array[i]"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

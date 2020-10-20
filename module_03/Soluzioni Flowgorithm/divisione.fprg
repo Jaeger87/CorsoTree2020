@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="andre"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-17 07:23:33 "/>
+        <attribute name="created" value="YW5kcmU7REVTS1RPUC1PUzc5VDMwOzIwMjAtMTAtMTc7IjAxOjI4OjI3ICI7Mjc1MA=="/>
+        <attribute name="edited" value="YW5kcmU7REVTS1RPUC1PUzc5VDMwOzIwMjAtMTAtMTc7IjA3OjIzOjMzICI7MTsyODU2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <declare name="arrayRisultati" type="Integer" array="True" size="2"/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <call expression="divisione(a,b,arrayRisultati)"/>
+            <output expression="a &amp; &quot; diviso &quot; &amp; b &amp; &quot; fa:&quot; &amp; arrayRisultati[0] &amp; &quot; con resto:&quot; &amp; arrayRisultati[1]" newline="True"/>
+        </body>
+    </function>
+    <function name="divisione" type="None" variable="">
+        <parameters>
+            <parameter name="dividendo" type="Integer" array="False"/>
+            <parameter name="divisore" type="Integer" array="False"/>
+            <parameter name="risultati" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <if expression="divisore == 0">
+                <then>
+                    <output expression="&quot;Non puoi dividere per 0&quot;" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="risultati[0]" expression="0"/>
+                    <assign variable="risultati[1]" expression="0"/>
+                    <while expression="dividendo &gt; divisore">
+                        <assign variable="dividendo" expression="dividendo - divisore"/>
+                        <assign variable="risultati[0]" expression="risultati[0] + 1"/>
+                    </while>
+                    <assign variable="risultati[1]" expression="dividendo"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
