@@ -95,6 +95,10 @@ public class CruciPuzzle {
         System.out.println(trovaParola(puzzle, "BALENA"));
         System.out.println(trovaParola(puzzle, "TRIGLIA"));
         System.out.println(trovaParola(puzzle, "EBAEFG"));
+        System.out.println(trovaParola(puzzle, "GOMKP"));
+        System.out.println(trovaParola(puzzle, "PYITOE"));
+        System.out.println(trovaParola(puzzle, "OPACALMTOL"));
+        System.out.println(trovaParola(puzzle, "SDA"));
     }
 
 }
