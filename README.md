@@ -8,5 +8,5 @@ This repo collects all the excercises produced and gathered by [Andrea Rosati](h
 |--------|---------|-------------------------------------------------------------------------------------------|
 | 2      | Control flow statements  | [Exercises](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_02) |
 | 3      | Java Syntax and naming   | [Exercises](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_03) |
-| 4      | Cycles                   | [Labirinth exercise](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_04) |
+| 4      | Git                      | [Labirinth exercise](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_04) |
 |        |         |                                                                                           |
