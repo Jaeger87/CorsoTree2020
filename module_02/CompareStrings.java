@@ -1,6 +1,6 @@
 package module_02;
 
-public class CompareStrings {
+public class  CompareStrings {
     public static void main(String[] args) {
         String a = "ciao come va ?";
         String b = "cIao come vA ?";
