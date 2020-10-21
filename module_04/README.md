@@ -1,6 +1,6 @@
 # Labyrinth
 
-Negli anni 80 molti videogiochi avevano una grafica "testuale" e cioè usavano i caratteri base del computer per disegnare a schermo.
+Negli anni 80 molti videogiochi :video_game: avevano una grafica "testuale" e cioè usavano i caratteri base del computer per disegnare a schermo.
 
 ![Rogue](./Immagini/rogue.png)
 
@@ -18,11 +18,11 @@ Scrivete un programma che permette ad un utente di giocare al vostro labirinto. 
 ![test](./Immagini/laby.gif)
 
 
-## Bonus stage:
+## :smiling_face_with_three_hearts: Bonus stage:
 
 Generate il labirinto randomicamente
 
-# Ultra mega bonus stage:
+# :skull_and_crossbones: Ultra mega bonus stage:
 ## Io ve lo dico, è difficile...
 Fate in modo che il computer sia in grado di risolvere da solo il labirinto.
 
