@@ -12,4 +12,6 @@ This repo collects all the excercises produced and gathered by [Andrea Rosati](h
 | 3      | Java Syntax and naming   | [Flowgorithm](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_03/Flowgorithm), [Exercises](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_03), [CruciPuzzle](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_03/CruciPuzzle) |
 | 4      | Git                      | [Labirinth](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_04) |
 |        |         |                                                                                           |
-<img src="Images/treelogo.png" height="312">
+
+\
+<img src="assets/treelogo.png" height="75">
