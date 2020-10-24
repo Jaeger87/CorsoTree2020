@@ -1,4 +1,4 @@
-# Lampadina
+# Lampadina :bulb:
 
 ## Esercizio 1
 Progettare una classe Lampadina, che modella una lampadina classica
