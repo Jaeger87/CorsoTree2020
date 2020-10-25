@@ -9,4 +9,4 @@ La classe deve
 * Permettere di sapere se la partita è in corso o se è finita (la partita finisce quando un giocatore ha vinto oppure tutte le caselle sono occupate)
 * Non deve permettere di giocare se la partita è finita
   
-Progettare una classe di test che permette di giocare al gioco
+Progettare una classe di test che permette di giocare al gioco. Implementare un metodo che fa giocare due giocatori finchè la partita non finisce.
