@@ -1,4 +1,4 @@
-# Tris (TicTacToe) :x: :o:
+# Tris :x::o: (TicTacToe)
 
 Progettare una classe ScacchieraTris, che rappresenta una partita di Tris
 
