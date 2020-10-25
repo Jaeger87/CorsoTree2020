@@ -1,6 +1,6 @@
 # Tris (TicTacToe)
 
-[TicTacToe](https://miro.medium.com/max/300/1*kdY26OPGZbeNKJs60q0zUg.png)
+![TicTacToe](https://miro.medium.com/max/300/1*kdY26OPGZbeNKJs60q0zUg.png)
 
 Progettare una classe ScacchieraTris, che rappresenta una partita di Tris
 
