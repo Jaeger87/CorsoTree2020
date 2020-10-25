@@ -12,4 +12,5 @@ La classe deve
 * Non deve permettere di giocare se la partita è finita
 * Far rispettare i turni (non si può mettere due volte di fila lo stesso segno X/O)
   
-Progettare una classe di test che permette di giocare al gioco. Implementare un metodo che fa giocare due giocatori finchè la partita non finisce.
+Progettare una classe di test che permette di giocare al gioco. 
+Implementare nella classe di test un metodo che fa giocare due giocatori finchè la partita non finisce.
