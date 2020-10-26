@@ -1,5 +1,7 @@
 # Numero Romano
 
+![numeri-hao](https://www.coolaboo.com/wp-content/uploads/2019/05/Roman-Numerals.jpg)
+
 Progettare una classe NumeroRomano, i cui oggetti si costruiscono a partire da una stringa che rappresenta un numero romano (es. MCDXVI)
 
 La classe deve esporre il metodo getValore() che restituisce il valore del numero romano come intero
