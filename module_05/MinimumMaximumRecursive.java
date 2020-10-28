@@ -1,4 +1,4 @@
-package module_03;
+package module_05;
 
 public class MinimumMaximumRecursive {
 
