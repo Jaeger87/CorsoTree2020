@@ -3,11 +3,9 @@ Esercizio Biblioteca 🛴
 Scrivere un programma che permetta di gestire una Biblioteca semplificata, in grado di gestire un array di indici (interi) dei libri che contiene. La Biblioteca viene costruita a partire da un array di indici di libri.
 In particolare, implementare i seguenti metodi:
 - esisteLibro: prende un indice e restituisce true se esiste il libro con questo indice, false altrimenti
-- getIndiciLibriOrdinati: ritorna la lista degli indici di libri presenti nella biblioteca, in ordine ascendente
+- getIndiciLibriOrdinati: ritorna la lista degli indici di libri presenti nella library, in ordine ascendente
 
 Potete utilizzare il codice a questo indirizzo come test:
-
-
 
 ```
 public static void main(String[] args) {
@@ -19,9 +17,9 @@ public static void main(String[] args) {
     values[4] = 76;
     values[5] = 2;
     values[6] = 235;
-    Biblioteca biblioteca = new Biblioteca(values);
-    System.out.println(biblioteca.esisteLibro(76));
-    int[] libriOrdinati = biblioteca.getIndiciLibriOrdinati();
+    Biblioteca library = new Biblioteca(values);
+    System.out.println(library.esisteLibro(76));
+    int[] libriOrdinati = library.getIndiciLibriOrdinati();
     System.out.println(libriOrdinati[0] == 2);
     System.out.println(libriOrdinati[1] == 4);
     System.out.println(libriOrdinati[2] == 33);
