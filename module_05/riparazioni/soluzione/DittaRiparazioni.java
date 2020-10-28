@@ -10,6 +10,8 @@ public class DittaRiparazioni {
     public DittaRiparazioni(){
         tecnici = new Tecnico[10];
         riparazioni = new Riparazione[10];
+        numTecnici = 0;
+        numRiparazioni = 0;
     }
 
     public Tecnico[] getTecnici(){
@@ -40,6 +42,9 @@ public class DittaRiparazioni {
         if (esisteTecnicoDatoNome(t.getNome()))
             return false;
 
+        if (numTecnici == tecnici.length-1)
+            return false;
+
         tecnici[numTecnici] = t;
         numTecnici++;
         return true;
@@ -48,6 +53,9 @@ public class DittaRiparazioni {
 
     private boolean esisteTecnicoDatoNome(String nome){
         for (int i = 0; i < numTecnici; i++) {
+            if (tecnici[i] == null)
+                break;
+
             if (tecnici[i].getNome().equals(nome))
                 return true;
         }
@@ -63,7 +71,10 @@ public class DittaRiparazioni {
 
         for (int i = 0; i < numRiparazioni; i++) {
             if (riparazioni[i].getStato().equals(StatoRiparazione.inAttesa))
-                inAttesa[countInAttesa++] = riparazioni[i];
+            {
+                inAttesa[countInAttesa] = riparazioni[i];
+                countInAttesa++;
+            }
         }
 
         return inAttesa;
@@ -75,24 +86,28 @@ public class DittaRiparazioni {
 
         for (int i = 0; i < numRiparazioni; i++) {
 
-            if (riparazioni[i].getStato().equals(StatoRiparazione.inCorso))
-                continue;
-
-            if (risultato == null)
-                risultato = riparazioni[i];
-            else if (riparazioni[i].getPriorita() > risultato.getPriorita())
-                risultato = riparazioni[i];
+            if (riparazioni[i].getStato().equals(StatoRiparazione.inAttesa))
+            {
+                if (risultato == null)
+                    risultato = riparazioni[i];
+                else if (riparazioni[i].getPriorita() > risultato.getPriorita())
+                    risultato = riparazioni[i];
+            }
         }
 
         return risultato;
     }
 
 
+
     public boolean assegnaProssimaRiparazione(){
         Tecnico tecnicoLibero = null;
         for (int i = 0; i < numTecnici; i++) {
             if (tecnici[i].getStato().equals(StatoTecnico.DISPONIBILE))
+            {
                 tecnicoLibero = tecnici[i];
+                break;
+            }
         }
 
         if (tecnicoLibero == null)

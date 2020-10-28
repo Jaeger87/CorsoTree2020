@@ -1,7 +1,6 @@
 public class Tecnico {
 
     private String nome;
-    private boolean isDisponibile;
     private Riparazione riparazione;
     private StatoTecnico stato;
 
@@ -12,14 +11,6 @@ public class Tecnico {
 
     public String getNome() {
         return nome;
-    }
-
-    public boolean isDisponibile() {
-        return isDisponibile;
-    }
-
-    public void setDisponibile(boolean disponibile) {
-        isDisponibile = disponibile;
     }
 
     public Riparazione getRiparazione() {
