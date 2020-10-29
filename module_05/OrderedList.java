@@ -1,7 +1,5 @@
 package module_05;
 
-import module_03.BinarySearch;
-
 import java.util.Arrays;
 
 public class OrderedList {
@@ -21,7 +19,12 @@ public class OrderedList {
         if(numberOfValues == orderedList.length)
             increaseArray();
         for(int i=0; i<orderedList.length; i++) {
-            if(orderedList[i] > element || i >= numberOfValues) {
+            if(i >= numberOfValues){
+                orderedList[i] = element;
+                numberOfValues++;
+                break;
+            }
+            if(orderedList[i] > element) {
                 //shift right of the elements
                 for(int j=numberOfValues; j>i; j--){
                     orderedList[j] = orderedList[j-1];
@@ -67,22 +70,18 @@ public class OrderedList {
     public void remove(Integer element) {
         if(element == null)
             return;
-        for(int i=0; i<orderedList.length; i++) {
-            if(orderedList[i] == element) {
-                //shift left of the elements
-                for(int j=0; j<numberOfValues; j++){
-                    orderedList[j] = orderedList[j+1];
-                }
-                orderedList[i] = element;
-                numberOfValues--;
-                decreaseArray();
-                break;
-            }
+        int index = indexOf(element);
+        if(index == -1)
+            return;
+        for(int j=index; j<numberOfValues; j++){
+            orderedList[j] = orderedList[j+1];
         }
+        numberOfValues--;
+        decreaseArray();
     }
 
     private void decreaseArray() {
-        int[] decreasedList = new int[numberOfValues];
+        int[] decreasedList = new int[numberOfValues*2];
         for(int i=0; i<numberOfValues; i++) {
             decreasedList[i] = orderedList[i];
         }
@@ -118,7 +117,8 @@ public class OrderedList {
         System.out.println(orderedList.indexOf(200) == 16);
         orderedList.remove(12); //not present
         System.out.println(orderedList.indexOf(200) == 16);
+        orderedList.insert(143);
         orderedList.remove(11);
-        System.out.println(orderedList.indexOf(200) == 15);
+        System.out.println(orderedList.indexOf(143) == 15);
     }
 }
