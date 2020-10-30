@@ -8,7 +8,8 @@ La classe prevede i seguenti metodi:
 
 - prenota: data una Prenotazione p in input, se c’è posto nel ristorante viene accettata restituendo true (dando precedenza alla preferenza indicata), altrimenti viene rifiutata restituendo false
 - terminaPrenotazione: data una Prenotazione p in input, termina la prenotazione eliminandola e liberando i posti associati.  
-PLUS🏍: Se presenti prenotazioni singole la cui preferenza può ora essere soddisfatta in virtù dei nuovi posti liberi, modificare la prenotazione di conseguenza. Esempio: ci sono 2 posti disponibili all’esterno e 2 prenotazioni p1 e p2, entrambe da 2 persone all’esterno; nel momento in cui viene terminata la prenotazione p1, se p2 è ancora in corso, va spostata all’esterno.
+PLUS🏍: Se presenti prenotazioni singole la cui preferenza può ora essere soddisfatta in virtù dei nuovi posti liberi, modificare la prenotazione di conseguenza. 
+Esempio: ci sono 2 posti disponibili all’esterno e 2 prenotazioni p1 e p2, entrambe da 2 persone all’esterno; nel momento in cui viene terminata la prenotazione p1, se p2 è ancora in corso, va spostata all’esterno.
 - prenotazioniAttualiEsterno: ritorna un array con le attuali prenotazioni per l’esterno del ristorante
 - prenotazioniAttualiInterno: ritorna un array con le attuali prenotazioni per l’interno del ristorante
   
