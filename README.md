@@ -11,8 +11,8 @@ This repo collects all the excercises produced and gathered by [Andrea Rosati](h
 | 2      | Control flow statements  | [Exercises](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_02) |
 | 3      | Java Syntax and naming   | [Flowgorithm](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_03/Flowgorithm), [Exercises](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_03), [CruciPuzzle](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_03/CruciPuzzle) |
 | 4      | Git                      | [Labirinth](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_04) |
-| 5      | OOP                      | [Lampadina](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_05/lampadina), [Tris](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_05/Tris) |
-|        |         |                                                                                           |
+| 5      | OOP                      | [Lampadina](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_05/lampadina), [Tris](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_05/Tris), [Riparazioni](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_05/riparazioni), [Numero Romano](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_05/NumeroRomano) |
+|6   | Inheritance        |     [Esercizi](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_06)                                                                                      |
 
 \
 <img src="assets/treelogo.png" height="75">
