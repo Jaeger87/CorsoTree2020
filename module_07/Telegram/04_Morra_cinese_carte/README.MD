@@ -6,6 +6,8 @@
 
 Realizzare un bot che simuli una versione riveduta della morra cinese.
 
-In questa morra cinese non si gioca con i gesti ma si usano delle carte
+In questa morra cinese non si gioca con i gesti ma si usano le carte; a inizio partita vengono generate 60 carte casuali che come valore possono avere i 3 simboli della morra cinese (sasso, carta forbice) e successivamente si comunica ai giocatori quante carte di ogni tipo sono state generate. Successivamente si danno tre carte ad ogni giocatore e questi dovranno scegliere una carta da giocare. Le carte scelte si scontrano con le regole della morra cinese, perciò se un giocatore ha giocato forbice e l'altro carta, il primo avrà vinto la manche, otterrà un punto e comincia una nuova manche con altre tre carte per ognuno. In caso di pareggio (stesso simbolo) si continua con le altre carte rimaste in mano fino a che non finiscono, a quel punto la mano è considerata para. Vince il primo giocatore che realizza 3 punti, se le carte del mazzo finiscono la partita è considerata un pareggio.
+
+Il bot permette ad un giocatore di sfidare il computer. Quando un giocatore scrive "nuova partita" il bot avvia la partita, genera le carte random e comunica al giocatore quante carte di ogni tipo sono state generate. Il bot quindi continua a simulare il gioco dando 3 di queste carte al giocatore e 3 al "giocatore simulato" dalla cpu. Le carte al giocatore sono mostrate su un tastierino di una sola riga e hanno sopra il simbolo e l'indice della carta nella mano; quando il giocatore gioca una carta la CPU seleziona casualmente una sua carta e la gioca, a quel punto il bot risolve la mano e da il punto oppure in caso di pareggio fa continuare la mano se ci sono ancora carte da giocare. Il bot controlla il punteggio della partita e quando un giocatore vince o le carte finiscono lo comunica all'utente e la partita finisce. Il bot deve permettere a più utenti di poter giocare contemporaneamente.
 
 

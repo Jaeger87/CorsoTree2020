@@ -8,4 +8,4 @@ Realizzare un bot che raccolga dei questionari e permetta agli utenti di sceglie
 
 Quando l'utente termina il questionario il bot scrive il risultato finale, se l'utente ha fatto il punteggio massimo, il bot notifica che l'utente ha totalizzato un punteggio massimo.
 
-Il bot fa scegliere il questionario da compilare tramite tastierino, per le domande invia la domanda e 
+Il bot fa scegliere il questionario da compilare tramite tastierino, per le domande invia la domanda come testo e le opzioni come tastierino.
