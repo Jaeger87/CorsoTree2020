@@ -1,4 +1,4 @@
-## Iterabile
+## Iterabile 🛴 
 
 Progettare un'interfaccia Iterabile che permette di fare le seguenti operazioni
 * next() che permette di ottenere il prossimo elemento 
