@@ -8,6 +8,7 @@ Un treno ha
 * una numero massimo di vagoni
 * lo stato delle porte dei vagoni (aperte, chiuse o guaste)
 * numero passeggeri a bordo
+* numeroMassimo passeggeri
 
 e può fare le seguenti operazioni
 * partire, che aumenta la velocità oltre lo zero
