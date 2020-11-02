@@ -25,7 +25,7 @@ public class TestLista {
         stringa.add('b');
         stringa.add('c');
 
-        System.out.println(stringa.remove(1) ? "OK" : "ERRORE");
+        System.out.println(stringa.remove(0) ? "OK" : "ERRORE");
 
         System.out.println(stringa.contains('b') ? "OK" : "ERRORE");
         System.out.println(!stringa.contains('d') ? "OK" : "ERRORE");
