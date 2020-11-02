@@ -9,8 +9,9 @@ Oggi imparerete a programmare [bot telegram](https://core.telegram.org/bots)!
 
 Un bot telegram non è altro che un software che scarica i messaggi che riceve da telegram e può rispondere. Generalmente un bot risiede su un server ma può tranquillamente essere eseguito sulle vostre macchine.
 
-
-![Schema](./Assets/telegramSchema.png)
+<p align="center">
+<img src="./Assets/telegramSchema.png" class="center">
+</p>
 
 Per scrivere un bot bisogna interagire con le [API messe a disposizione da Telegram](https://core.telegram.org/bots). Questo significa che possiamo realizzare il nostro bot nel linguaggio di programmazione che vogliamo, l'importante è che il linguaggio ci dia la possibilità di poter utilizzare la rete. Per rendere semplice e immediato l'utilizzo di queste API, sviluppatori di tutto il mondo hanno creato framework e Wrapper per rendere facile la vita agli altri sviluppatori in modo così che potessero concentrarsi sull'implementazione del bot senza soffermarsi su molti aspetti tecnici. in [questa pagina](https://core.telegram.org/bots/samples) una selezione di questi prodotti divisa per linguaggio, per la lezione di oggi utilizzeremo [Botticelli](https://github.com/Jaeger87/Botticelli), un framework Java realizzato da [Jaeger87](https://github.com/Jaeger87).
 
@@ -172,10 +173,10 @@ Ci sono moltissime altre cose che si possono fare con i bot grazie a Botticelli 
 
 Esercizio | Difficoltà
 ------------ | -------------
-Bot base | :kick_scooter:
-Random media bot | :kick_scooter:
-Lista della spesa | :motor_scooter:
-Morra cinese a carte | :motor_scooter: / :motorcycle:
-Questionari | :motorcycle:
+[Bot base](https://github.com/Jaeger87/CorsoTree2020/tree/Telegram/module_07/Telegram/01_BotBase) | :kick_scooter:
+[Random media bot](https://github.com/Jaeger87/CorsoTree2020/tree/Telegram/module_07/Telegram/02_RandomMedia) | :kick_scooter:
+[Lista della spesa](https://github.com/Jaeger87/CorsoTree2020/tree/Telegram/module_07/Telegram/03_Lista_della_spesa) | :motor_scooter:
+[Morra cinese a carte](https://github.com/Jaeger87/CorsoTree2020/tree/Telegram/module_07/Telegram/04_Morra_cinese_carte) | :motor_scooter: / :motorcycle:
+[Questionari](https://github.com/Jaeger87/CorsoTree2020/tree/Telegram/module_07/Telegram/05_Questionari) | :motorcycle:
 
 E se riuscite a finirli tutti... create il vostro bot personale!
