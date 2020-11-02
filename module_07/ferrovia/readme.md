@@ -7,6 +7,7 @@ Un treno ha
 * la velocità attuale
 * una numero massimo di vagoni
 * lo stato delle porte dei vagoni (aperte, chiuse o guaste)
+* numero passeggeri a bordo
 
 e può fare le seguenti operazioni
 * partire, che aumenta la velocità oltre lo zero
@@ -21,5 +22,4 @@ Esistono due tipi di treno
   
 * FrecciaRossa
   * ha un massimo di 20 vagoni
-  * quando arriva in stazione apre automaticamente le porte del treno
 
