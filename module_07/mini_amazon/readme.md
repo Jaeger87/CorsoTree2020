@@ -1,4 +1,4 @@
-## Mini Amazon 🏍🏍
+## Mini Amazon 🏍
 
 
 Implementare un insieme di classi che modellano il funzionamento di un ecommerce tipo Amazon
