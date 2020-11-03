@@ -180,7 +180,8 @@ Esercizio | Difficoltà
 [Bot base](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Telegram/01_BotBase) | :kick_scooter:
 [Random media bot](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Telegram/02_RandomMedia) | :kick_scooter:
 [Lista della spesa](https://github.com/Jaeger87/CorsoTree2020/tree/Telegram/module_07/master/03_Lista_della_spesa) | :motor_scooter:
-[Morra cinese a carte](https://github.com/Jaeger87/CorsoTree2020/tree/Telegram/module_07/master/04_Morra_cinese_carte) | :motor_scooter: / :motorcycle:
-[Questionari](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Telegram/05_Questionari) | :motorcycle:
+[Questionari](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Telegram/04_Questionari) | :motor_scooter: /:motorcycle:
+[Morra cinese a carte](https://github.com/Jaeger87/CorsoTree2020/tree/Telegram/module_07/master/05_Morra_cinese_carte) |  :motorcycle:
+
 
 E se riuscite a finirli tutti... create il vostro bot personale!
