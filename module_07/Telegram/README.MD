@@ -27,12 +27,12 @@ Contattate quindi con il vostro account telegram il botFather, dategli il comand
 
 # ATTENZIONE
 
-Il token è univoco e legato al vostro account e al vostro bot, non dovete assolutamente condividerlo e fate attenzione a non caricarlo nella vostra repository personale (vi ricordate il git ignore? Ecco, usatelo!)
+Il token è univoco e legato al vostro account e al vostro bot, non dovete assolutamente condividerlo e fate attenzione a non caricarlo nella vostra repository personale (vi ricordate il **git ignore**? Ecco, usatelo!)
 
 
 ## Partiamo
 
-Una volta creato il bot, scaricate il paccheto zip [IlMioPrimoBot.zip](), decomprimetelo e nel file token.txt inserite il vostro **token segreto**, in questa maniera se volete caricare il progetto su github vi basterà inserire nel git.ignore il file token.txt.
+Una volta creato il bot, scaricate il paccheto zip [IlMioPrimoBot.zip](https://github.com/Jaeger87/CorsoTree2020/blob/Telegram/module_07/master/IlMioPrimoBot.zip), decomprimetelo e nel file token.txt inserite il vostro **token segreto**, in questa maniera se volete caricare il progetto su github vi basterà inserire nel git.ignore il file token.txt.
 
 All'interno del progetto troverete due classi, la classe Main che contiene il main del progetto e la classe PrimoBot.java in cui risiede il bot. 
 
@@ -89,7 +89,7 @@ La classe PrimoBot è un esempio di classe Bot che però al momento non fa nulla
 ```
 E molti altri!
 
-Questi metodi rappresentano i tipi di messaggio che vi possono arrivare, perciò per esempio quando arriva un messaggio di testo viene chiamato il metodo textMessage(Message message) e quando invece arriva uno sticker al bot viene chiamato il messaggio public void stickerMessage(Message message). L'oggetto Message non è altro che la conversione 1 a 1 di [questo oggetto](https://core.telegram.org/bots/api#message) che invia Telegram; perciò quando viene chiamato il metodo stickerMessage(Message message) potete stare certi che il campo sticker di message è popolato e quindi potete utilizzare il metodo getSticker() e ottenere uno sticker. Gli oggetti seguono fedelmente la conformazione che trovate nella pagina di documentazione ufficiale di Telegram, perciò tenete sempre la pagina aperta e a portata di mano :wink:
+Questi metodi rappresentano i tipi di messaggio che vi possono arrivare, perciò per esempio quando arriva un messaggio di testo viene chiamato il metodo textMessage(Message message) e quando invece arriva uno sticker al bot viene chiamato il messaggio public void stickerMessage(Message message). L'oggetto Message non è altro che la conversione 1 a 1 di [questo oggetto](https://core.telegram.org/bots/api#message) che invia Telegram; perciò quando viene chiamato il metodo stickerMessage(Message message) potete stare certi che il campo sticker di message è popolato e quindi potete utilizzare il metodo getSticker() e ottenere uno sticker. Gli oggetti seguono fedelmente la conformazione che trovate nella [pagina di documentazione ufficiale di Telegram](https://core.telegram.org/bots), perciò tenete sempre la pagina aperta e a portata di mano :wink:
 
 ## Inviare un messaggio di testo
 Per inviare un messaggio di testo bisogna utilizzare il metodo sendMessage() che prende in input un oggetto di tipo MessageToSend
@@ -170,6 +170,10 @@ Non avendo visto ancora come gestire i file in Java, non vedremo l'altra modalit
 Ci sono moltissime altre cose che si possono fare con i bot grazie a Botticelli come i comandi inline o le tastiere inline, per oggi però le nozioni appena viste bastano e avanzano e vi permettono già di creare bot molto fighi :sunglasses:
 
 ## Esercizi di oggi
+
+### Disclaimer
+
+Non avendo ancora visto come gestire gli errori e le eccezioni in Java, non vi sarà richiesto di gestire queste situazioni negli esercizi, esempio: il bot si aspetta un intero e gli arriva invece una stringa, non preoccupatevi di questi casi. Gli esercizi sono ordinati per difficoltà.
 
 Esercizio | Difficoltà
 ------------ | -------------

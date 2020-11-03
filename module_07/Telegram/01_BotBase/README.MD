@@ -7,6 +7,8 @@ In questo esercizio dovete realizzare un bot con le seguenti caratteristiche:
 3. Se l'utente invia uno sticker, il bot risponde prima con "Bello sto sticker! guarda questo" 
 Guarda questo invece" e successivamente invia nuo sticker a vostra scelta.
 
+Hint: [Dove trovare le info utente](https://core.telegram.org/bots/api#user)
+
 Hint mandatory: Per realizzare questo bot, piuttosto che fare un groviglio di if else dei comandi, realizzate una classe enum che dalla stringa crea l'enum del comando e successivamente con un costrutto switch il bot gestisce i comandi. Esempio:
 
 
