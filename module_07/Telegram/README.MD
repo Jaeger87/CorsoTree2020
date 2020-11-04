@@ -32,7 +32,7 @@ Il token è univoco e legato al vostro account e al vostro bot, non dovete assol
 
 ## Partiamo
 
-Una volta creato il bot, scaricate il paccheto zip [IlMioPrimoBot.zip](https://github.com/Jaeger87/CorsoTree2020/blob/Telegram/module_07/master/IlMioPrimoBot.zip), decomprimetelo e nel file token.txt inserite il vostro **token segreto**, in questa maniera se volete caricare il progetto su github vi basterà inserire nel git.ignore il file token.txt.
+Una volta creato il bot, scaricate il paccheto zip [IlMioPrimoBot.zip](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Telegram/IlMioPrimoBot.zip), decomprimetelo e nel file token.txt inserite il vostro **token segreto**, in questa maniera se volete caricare il progetto su github vi basterà inserire nel git.ignore il file token.txt.
 
 All'interno del progetto troverete due classi, la classe Main che contiene il main del progetto e la classe PrimoBot.java in cui risiede il bot. 
 
