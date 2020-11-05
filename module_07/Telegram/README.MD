@@ -13,7 +13,7 @@ Un bot telegram non è altro che un software che scarica i messaggi che riceve d
 <img src="./Assets/telegramSchema.png" class="center">
 </p>
 
-Per scrivere un bot bisogna interagire con le [API messe a disposizione da Telegram](https://core.telegram.org/bots). Questo significa che possiamo realizzare il nostro bot nel linguaggio di programmazione che vogliamo, l'importante è che il linguaggio ci dia la possibilità di poter utilizzare la rete. Per rendere semplice e immediato l'utilizzo di queste API, sviluppatori di tutto il mondo hanno creato framework e Wrapper per rendere facile la vita agli altri sviluppatori in modo così che potessero concentrarsi sull'implementazione del bot senza soffermarsi su molti aspetti tecnici. in [questa pagina](https://core.telegram.org/bots/samples) una selezione di questi prodotti divisa per linguaggio, per la lezione di oggi utilizzeremo [Botticelli](https://github.com/Jaeger87/Botticelli), un framework Java realizzato da [Jaeger87](https://github.com/Jaeger87).
+Per scrivere un bot bisogna interagire con le [API messe a disposizione da Telegram](https://core.telegram.org/bots/api). Questo significa che possiamo realizzare il nostro bot nel linguaggio di programmazione che vogliamo, l'importante è che il linguaggio ci dia la possibilità di poter utilizzare la rete. Per rendere semplice e immediato l'utilizzo di queste API, sviluppatori di tutto il mondo hanno creato framework e Wrapper per rendere facile la vita agli altri sviluppatori in modo così che potessero concentrarsi sull'implementazione del bot senza soffermarsi su molti aspetti tecnici. in [questa pagina](https://core.telegram.org/bots/samples) una selezione di questi prodotti divisa per linguaggio, per la lezione di oggi utilizzeremo [Botticelli](https://github.com/Jaeger87/Botticelli), un framework Java realizzato da [Jaeger87](https://github.com/Jaeger87).
 
 ## Creazione di un bot
 
@@ -89,7 +89,7 @@ La classe PrimoBot è un esempio di classe Bot che però al momento non fa nulla
 ```
 E molti altri!
 
-Questi metodi rappresentano i tipi di messaggio che vi possono arrivare, perciò per esempio quando arriva un messaggio di testo viene chiamato il metodo textMessage(Message message) e quando invece arriva uno sticker al bot viene chiamato il messaggio public void stickerMessage(Message message). L'oggetto Message non è altro che la conversione 1 a 1 di [questo oggetto](https://core.telegram.org/bots/api#message) che invia Telegram; perciò quando viene chiamato il metodo stickerMessage(Message message) potete stare certi che il campo sticker di message è popolato e quindi potete utilizzare il metodo getSticker() e ottenere uno sticker. Gli oggetti seguono fedelmente la conformazione che trovate nella [pagina di documentazione ufficiale di Telegram](https://core.telegram.org/bots), perciò tenete sempre la pagina aperta e a portata di mano :wink:
+Questi metodi rappresentano i tipi di messaggio che vi possono arrivare, perciò per esempio quando arriva un messaggio di testo viene chiamato il metodo textMessage(Message message) e quando invece arriva uno sticker al bot viene chiamato il messaggio public void stickerMessage(Message message). L'oggetto Message non è altro che la conversione 1 a 1 di [questo oggetto](https://core.telegram.org/bots/api#message) che invia Telegram; perciò quando viene chiamato il metodo stickerMessage(Message message) potete stare certi che il campo sticker di message è popolato e quindi potete utilizzare il metodo getSticker() e ottenere uno sticker. Gli oggetti seguono fedelmente la conformazione che trovate nella [pagina di documentazione ufficiale di Telegram](https://core.telegram.org/bots/api), perciò tenete sempre la pagina aperta e a portata di mano :wink:
 
 ## Inviare un messaggio di testo
 Per inviare un messaggio di testo bisogna utilizzare il metodo sendMessage() che prende in input un oggetto di tipo MessageToSend
@@ -180,7 +180,7 @@ Esercizio | Difficoltà
 [Bot base](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Telegram/01_BotBase) | :kick_scooter:
 [Random media bot](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Telegram/02_RandomMedia) | :kick_scooter:
 [Lista della spesa](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Telegram/03_Lista_della_spesa) | :motor_scooter:
-[Questionari](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Telegram/04_Questionari) | :motor_scooter: /:motorcycle:
+[Questionari](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/master/04_Questionari) | :motor_scooter: /:motorcycle:
 [Morra cinese a carte](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Telegram/05_Morra_cinese_carte) |  :motorcycle:
 
 
