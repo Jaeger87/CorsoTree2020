@@ -13,6 +13,7 @@ This repo collects all the excercises produced and gathered by [Andrea Rosati](h
 | 4      | Git                      | [Labirinth](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_04) |
 | 5      | OOP                      | [Lampadina](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_05/lampadina), [Tris](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_05/Tris), [Riparazioni](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_05/riparazioni), [Numero Romano](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_05/NumeroRomano) |
 |6   | Inheritance        |     [Esercizi](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_06)                                                                                      |
+|7   | Advanced inheritance | [Iterabile](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/iterabile), [Ferrovia](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/ferrovia), [Lista](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/lista), [Mini Amazon](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/mini_amazon), [Labirinto 2](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Labirinto_2), [Bot Telegram](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Telegram)                                                                                      |
 
 \
 <img src="assets/treelogo.png" height="75">
