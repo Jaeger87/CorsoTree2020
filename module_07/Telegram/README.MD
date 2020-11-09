@@ -185,3 +185,19 @@ Esercizio | Difficoltà
 
 
 E se riuscite a finirli tutti... create il vostro bot personale!
+
+# Hall of fame
+
+Alcuni di voi hanno realizzato versioni personalizzate degli esercizi o bot completamente nuovi di zecca, qui di una selezione dei **migliori** lavori:
+
+
+User | Repo bot
+------------ | -------------
+[Davide Figuccia](https://github.com/FlameDavid92) | [Versione pro di morra cinese con carte](https://github.com/FlameDavid92/telegramBots/tree/main/src/botMorraCinese)
+[Greta Caraballo](https://github.com/gretaacn) | [Tic tac toe](https://github.com/gretaacn/CorsoTree-TicTacToeUBot)
+
+&nbsp;
+
+<p align="center">
+<img src="https://i.pinimg.com/originals/1f/93/21/1f932187470aa47ddd0fe4b072194655.gif"  class="center">
+</p>
