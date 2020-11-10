@@ -12,7 +12,7 @@ Devono essere possibili le seguenti operazioni:
 - inserisci parola (con almeno un significato associato)
 - aggiungi significato per una certa parola
 - stampa dizionario, che ritorna una stringa contenente ogni parola e significato
-(in ordine lessicografico ascendente) nella forma:
+(in ordine lessicografico ascendente in base alla lettera) nella forma:
 
 ```
  lettera1:[parola1: (significato1;significato2;...;), parola2: (significato1;...;...;)]
