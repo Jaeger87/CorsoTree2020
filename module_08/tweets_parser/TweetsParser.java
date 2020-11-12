@@ -18,23 +18,24 @@ public class TweetsParser {
             }
         }
 
-        List<WordObject> mostFrequentWords = new ArrayList<>();
+        Queue<WordObject> mostFrequentWords = new PriorityQueue<>();
         for(String word : countMap.keySet()) {
             if (mostFrequentWords.size() < n) {
-                mostFrequentWords.add(new WordObject(word, countMap.get(word)));
+                mostFrequentWords.offer(new WordObject(word, countMap.get(word)));
             }
             else {
-                WordObject minMostFrequentWord = Collections.min(mostFrequentWords);
-                if (minMostFrequentWord.getCount() < countMap.get(word)) { //update
-                    mostFrequentWords.remove(minMostFrequentWord);
+                WordObject minMostFrequentWord = mostFrequentWords.peek();
+                if (minMostFrequentWord != null &&
+                        minMostFrequentWord.getCount() < countMap.get(word)) { //update
+                    mostFrequentWords.poll();
                     mostFrequentWords.add(new WordObject(word, countMap.get(word)));
                 }
             }
 
         }
         Set<String> result = new HashSet<>();
-        for(WordObject wordObject : mostFrequentWords)
-            result.add(wordObject.getWord());
+        while(!mostFrequentWords.isEmpty())
+            result.add(mostFrequentWords.poll().getWord());
         return result;
 
         //WITH STREAMS
