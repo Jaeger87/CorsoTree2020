@@ -1,10 +1,9 @@
-package module_08.tweets_parser;
+package module_08_09.tweets_parser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class TweetsParser {
 

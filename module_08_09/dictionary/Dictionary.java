@@ -1,4 +1,4 @@
-package module_08.dictionary;
+package module_08_09.dictionary;
 
 import java.util.*;
 

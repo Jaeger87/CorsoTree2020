@@ -1,4 +1,4 @@
-package module_08.supermarket;
+package module_08_09.supermarket;
 
 import java.util.Comparator;
 import java.util.Objects;

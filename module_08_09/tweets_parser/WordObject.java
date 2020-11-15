@@ -1,4 +1,4 @@
-package module_08.tweets_parser;
+package module_08_09.tweets_parser;
 
 import java.util.Comparator;
 import java.util.Objects;
