@@ -15,6 +15,6 @@ This repo collects all the excercises produced and gathered by [Andrea Rosati](h
 |6   | Inheritance        |     [Esercizi](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_06)                                                                                      |
 |7   | Advanced inheritance | [Iterabile](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/iterabile), [Ferrovia](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/ferrovia), [Lista](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/lista), [Mini Amazon](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/mini_amazon), [Labirinto 2](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Labirinto_2), [Bot Telegram](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_07/Telegram)                                                                                      |
 |8 - 9   | Generics and Collections | [Dictionary](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_08_09/dictionary), [LibraryV2](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_08_09/libraryV2), [SuperMarket](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_08_09/supermarket), [TinderLike](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_08_09/tinder_like), [TweetsParser](https://github.com/Jaeger87/CorsoTree2020/tree/master/module_08_09/tweets_parser)
-
+|11   | Parallel programming | [Sum Thread](), [From sequential to parallel]()
 \
 <img src="assets/treelogo.png" height="75">
