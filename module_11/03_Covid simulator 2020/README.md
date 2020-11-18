@@ -2,7 +2,7 @@
 
 
 <p align="center">
-<img src="https://media1.tenor.com/images/03cebe95738fda820b9a046a72e2dd5a/tenor.gif"  class="center">
+<img src="https://img.trashitalianoapp.it/wp-content/uploads/2020/06/COVIDD.gif"  class="center">
 </p>
 
 E invece c'era...
