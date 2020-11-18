@@ -40,7 +40,7 @@ Partendo da questi file vogliamo creare un nuovo File che contiene gli ID di tut
 
 1. L'utente ha una temperatura maggiore uguale a 40°
 2. L'utente ha una temperatura maggiore uguale a 38° e ha tutti i sintomi
-3. L'utente ha una situazione clinica critica e O ha una temperatura maggiore uguale a 38.5 o un sintomo
+3. L'utente ha una situazione clinica critica e O ha una temperatura maggiore uguale a 38.5 o almeno un sintomo
 4. L'utente ha almeno 50 anni e una temperatura di almeno 37°
 5. L'utente ha almeno 60 anni e, o gli manca il gusto e ha una situazione clinica di "cautela" o ha la tosse e una situazione clinica critica.
 
