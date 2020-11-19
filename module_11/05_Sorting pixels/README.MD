@@ -1,4 +1,4 @@
-# Da sequenziale a parallelo :motorcycle:
+# Ordinare i pixel di un'immagine... in parallelo :motorcycle:
 
 GRIS è tornata!
 

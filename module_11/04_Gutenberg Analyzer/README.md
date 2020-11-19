@@ -7,7 +7,7 @@
 In questo programma dovrete analizzare dei classici di narrativa (in italiano o inglese) presi da [project Gutenberg](https://www.gutenberg.org/) 
 
 
-Per ogni libro bisognerà produrre un array di interi di lunghezza 26 dove nella prima posizione ci sono il numero di lettere 'A' che compaiono nel libro (sia maiuscole che miniscole), nella seconda le 'B' e via discorrendo. Ignorate le lettere accentate, simboli di punteggiatura, numeri e altri simboli strani. Questa tipo di analisi è banalmente parallelizzabile, scrivete quindi questa parte di codice in modo da sfruttare il parallelismo scegliendo il modo più consono.
+Per ogni libro bisognerà produrre un array di interi di lunghezza 26 dove nella prima posizione ci sono il numero di lettere 'A' che compaiono nel libro (sia maiuscole che minuscole), nella seconda le 'B' e via discorrendo. Ignorate le lettere accentate, simboli di punteggiatura, numeri e altri simboli strani. Questa tipo di analisi è banalmente parallelizzabile, scrivete quindi questa parte di codice in modo da sfruttare il parallelismo scegliendo il modo più consono.
 
 I file dei libri li trovate dentro la cartella books.
 

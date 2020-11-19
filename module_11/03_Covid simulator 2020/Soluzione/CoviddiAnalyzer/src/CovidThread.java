@@ -1,14 +1,12 @@
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collection;
 import java.util.Scanner;
 import java.util.Stack;
 
 public class CovidThread extends Thread{
 
     private String fileName;
-    private Collection safeList;
     private Stack<String> idTamponi;
     public CovidThread(String fileName, Stack idTamponi) {
         this.fileName = fileName;
