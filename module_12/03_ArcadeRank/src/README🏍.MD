@@ -15,6 +15,6 @@ Implementare le seguenti operazioni:
 - classifica di un videogioco: dato un id, restituisce la classifica (top 3) del videogioco con quell'id in formato 
 username:punteggio dei primi
 - ultime N partite: restituisce le ultime N partite
-- classifica globale: restituisce la classifica globale (top 3) della sala-giochi
+PLUS  🏍 🏍 - classifica globale: restituisce la classifica globale (top 3) della sala-giochi
 
 Potete assumere che la scala del punteggio sia uniforme per tutti i videogiochi 
