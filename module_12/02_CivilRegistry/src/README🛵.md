@@ -8,7 +8,7 @@ Inoltre, devono essere possibili le seguenti operazioni:
 - rimuovi persona da codice fiscale: rimuove una persona con il corrispondente codice fiscale dal sistema
 - ottieni persone per nome: dato un nome, ritorna le persone che hanno un nome che corrisponde
  o inizia con quello in input
-- ottieni le 3 persone più anziane: ritorna le 10 persone più anziane presenti nel sistema
+- ottieni le 3 persone più anziane: ritorna le 3 persone più anziane presenti nel sistema
 - ottieni indirizzi per nome: dato un nome, ritorna l'indirizzo di tutte le persone con nome 
 corrispondente a quello in input
 
