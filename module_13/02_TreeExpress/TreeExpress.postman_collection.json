@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "9584f714-dc9a-4668-aec9-b0427a54edcc",
+		"name": "TreeExpress",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add user 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uuid\": \"433f493d-205d-4a7a-9551-438954f31991\",\n    \"name\": \"marco\",\n    \"lastname\": \"bianchi\",\n    \"address\": \"via rosis 3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4567/express/users/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"express",
+						"users",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add user 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uuid\": \"10705d39-07c8-40a9-beab-2a5ad0f647bd\",\n    \"name\": \"mario\",\n    \"lastname\": \"rossi\",\n    \"address\": \"via rosis 3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4567/express/users/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"express",
+						"users",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create delivery",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4567/express/delivery/create?senderId=433f493d-205d-4a7a-9551-438954f31991&receiverId=10705d39-07c8-40a9-beab-2a5ad0f647bd&weight=25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"express",
+						"delivery",
+						"create"
+					],
+					"query": [
+						{
+							"key": "senderId",
+							"value": "433f493d-205d-4a7a-9551-438954f31991"
+						},
+						{
+							"key": "receiverId",
+							"value": "10705d39-07c8-40a9-beab-2a5ad0f647bd"
+						},
+						{
+							"key": "weight",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get shipping deliveries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4567/express/deliveries/shipping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"express",
+						"deliveries",
+						"shipping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set shipped delivery",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4567/express/delivery/shipped?id=1f9b3208-a7e9-458e-814d-885858be589e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"express",
+						"delivery",
+						"shipped"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1f9b3208-a7e9-458e-814d-885858be589e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user inbound deliveries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4567/express/deliveries/user?receiver=10705d39-07c8-40a9-beab-2a5ad0f647bd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"express",
+						"deliveries",
+						"user"
+					],
+					"query": [
+						{
+							"key": "receiver",
+							"value": "10705d39-07c8-40a9-beab-2a5ad0f647bd"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
