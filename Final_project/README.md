@@ -6,7 +6,7 @@
 </p>
 
 
-Come proggetto finale, utilizzando [Spring framework](https://spring.io/), dovrete realizzare il lato backend di un'app Android da noi realizzata e consegnata a voi; questo applicativo è un gestionale di prenotazioni per evitare assembramenti in tempi di covid-19. Gli utenti possono registrarsi alla piattaforma, creare eventi, vedere gli eventi disponibili, iscriversi ad eventi, cancellarsi da eventi e vedere a quali eventi ci si è iscritti.
+Come progetto finale, utilizzando [Spring framework](https://spring.io/), dovrete realizzare il lato backend di un'app Android da noi realizzata e consegnata a voi; questo applicativo è un gestionale di prenotazioni per evitare assembramenti in tempi di covid-19. Gli utenti possono registrarsi alla piattaforma, creare eventi, vedere gli eventi disponibili, iscriversi ad eventi, cancellarsi da eventi e vedere a quali eventi ci si è iscritti.
 
 
 L'applicativo ha tutto ciò che gli serve lato frontend ma per poter funzionare ha bisogno degli endpoint del backend con cui interagire
