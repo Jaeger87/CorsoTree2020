@@ -19,7 +19,7 @@ GET | logIn | QueryString | [username, password] | User | /login?username={usern
 GET | getActiveEvents | | | List\<Event> | /events | 200 |Restituisce gli eventi disponibili a cui l'utente può registrarsi
 POST | signToEvent | PathParam | [eventid] | Event | /join/{eventid} | 202 | Registra l'utente ad un evento
 POST | createEvent | Body Json | Event {name, capacity, place, date} | Event | /event | 201 | Crea un evento sulla piattaforma
-GET | getEventDetails | PathParam | [eventid] | User | /event/{eventid} | 200 | Restituisce le informazioni dettagliate di un evento.
+GET | getEventDetails | PathParam | [eventid] | Event | /event/{eventid} | 200 | Restituisce le informazioni dettagliate di un evento.
 DELETE | cancelEvent | PathParam | [eventid] | Event | /event/{eventid} | 200 | Permette **solo** al creatore di un evento di annullarlo.
 GET | getUserEvents | | | List\<Event> | /user/events | 200 | Restituisce una lista con gli eventi creati dall'utente e quelli a cui ha partecipato. Solo gli eventi futuri, non quelli passati
 
