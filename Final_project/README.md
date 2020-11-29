@@ -50,6 +50,9 @@ name | String | Nome dell'evento
 date | Date | Data e ora di quando si svolgerà l'evento
 place | String | Dove si svolgerà l'evento
 capacity | Integer | Quante persone può accogliere l'evento
+&nbsp;
+
+La date sono inviate sotto forma di stringa con il seguente formato: dd/MM/yyyy
 
 &nbsp;
 ## Ci sono una serie di requisiti che l'applicativo deve rispettare:
@@ -63,3 +66,32 @@ capacity | Integer | Quante persone può accogliere l'evento
 
 
 Il backend da voi realizzato dovrà esporre gli endpoint elencati come APIREST; per quanto riguarda i dati questi dovranno essere salvati su un database SQL. **Evitate di salvare le password in chiaro nel database.**
+
+
+## Connessione al server dall'app
+
+<p align="center">
+<img src="assets/connection.png"  class="center" height="550">
+</p>
+
+In questa schermata dovrete inserire l'ip del server dove girerà il vostro applicativo e la porta da dove il vostro applicativo sarà in ascolto di nuove connessioni. Il server può tranquillamente essere il vostro computer su cui sviluppate il codice; se avete un ip visibible dall'esterno inserite quello altrimenti vi basterà connettere il telefono al vostro Wifi di casa e dargli come ip quello della rete interna del vostro computer, 
+
+
+### Come scopro il mio ip interno?
+
+Scoprire l'ip interno del proprio computer è semplicissimo, su windows vi basta aprire il prompt dei comandi e digitare il comando "ipconfig":
+
+<p align="center">
+<img src="assets/prompt.png"  class="center">
+</p>
+
+L'indirizzo sottolineato in rosso è l'indirizzo ip del vostro computer nella vostra rete interna.
+
+
+### E quello esterno?
+
+Il modo più rapido per scoprire il vostro ip esterno è quello di andare in siti internet come [questo](https://www.myexternalip.com/). Fate attenzione che se il vostro ip è nascosto dietro [una rete NAT](https://www.fastweb.it/internet/cos-e-il-nat-e-come-funziona/) (potrebbe succedere se siete utenti fastweb) potreste non vedere il vostro ip esterno ma quello della rete NAT di cui fate parte. Un'altra cosa di cui fare attenzione in caso di utilizzo di ip esterno è che il vostro router potrebbe bloccare (per questioni di sicurezza) la porta su cui il server è in ascolto e in questo caso bisogna autorizzare la porta a ricevere dati. 
+
+
+
+Il nostro consiglio è quello di non perdere tempo con l'ip esterno ma di **utilizzare il vostro ip interno** poiché è sicuramente più semplice e l'utilizzo dell'ip esterno vi da soltanto il vantaggio di poter utilizzare l'app fuori casa.
