@@ -52,8 +52,8 @@ place | String | Dove si svolgerà l'evento
 capacity | Integer | Quante persone può accogliere l'evento
 &nbsp;
 
-La date sono inviate sotto forma di stringa con il seguente formato: dd/MM/yyyy
-Un time stamp è una data che ha anche un orario ed è nel formtato: dd/MM/yyyy
+La date sono inviate sotto forma di stringa con il seguente formato: yyyy-MM-dd
+Un time stamp è una data che ha anche un orario ed è nel formtato: yyyy-MM-ddThh:mm:ss
 
 &nbsp;
 ## Ci sono una serie di requisiti che l'applicativo deve rispettare:
