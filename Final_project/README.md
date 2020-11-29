@@ -47,12 +47,13 @@ Campo | Tipo | Descrizione
 ------------ |-------- |-------------
 eventid | UUID | ID univoco dell'evento
 name | String | Nome dell'evento
-date | Date | Data e ora di quando si svolgerà l'evento
+date | Timestamp | Data e ora di quando si svolgerà l'evento
 place | String | Dove si svolgerà l'evento
 capacity | Integer | Quante persone può accogliere l'evento
 &nbsp;
 
 La date sono inviate sotto forma di stringa con il seguente formato: dd/MM/yyyy
+Un time stamp è una data che ha anche un orario ed è nel formtato: dd/MM/yyyy
 
 &nbsp;
 ## Ci sono una serie di requisiti che l'applicativo deve rispettare:
@@ -90,8 +91,8 @@ L'indirizzo sottolineato in rosso è l'indirizzo ip del vostro computer nella vo
 
 ### E quello esterno?
 
-Il modo più rapido per scoprire il vostro ip esterno è quello di andare in siti internet come [questo](https://www.myexternalip.com/). Fate attenzione che se il vostro ip è nascosto dietro [una rete NAT](https://www.fastweb.it/internet/cos-e-il-nat-e-come-funziona/) (potrebbe succedere se siete utenti fastweb) potreste non vedere il vostro ip esterno ma quello della rete NAT di cui fate parte. Un'altra cosa di cui fare attenzione in caso di utilizzo di ip esterno è che il vostro router potrebbe bloccare (per questioni di sicurezza) la porta su cui il server è in ascolto e in questo caso bisogna autorizzare la porta a ricevere dati. 
+Il modo più rapido per scoprire il vostro ip esterno è quello di andare in siti internet come [questo](https://www.myexternalip.com/). Fate attenzione che se il vostro ip è nascosto dietro [una rete NAT](https://www.fastweb.it/internet/cos-e-il-nat-e-come-funziona/) (potrebbe succedere se siete utenti fastweb) potreste non vedere il vostro ip esterno ma quello della rete NAT di cui fate parte. Un'altra cosa di cui fare attenzione in caso di utilizzo di ip esterno è che il vostro router potrebbe bloccare (per questioni di sicurezza) la porta su cui il server è in ascolto e in questo caso bisogna nei settaggi del router autorizzare la porta a ricevere dati. 
 
 
 
-Il nostro consiglio è quello di non perdere tempo con l'ip esterno ma di **utilizzare il vostro ip interno** poiché è sicuramente più semplice e l'utilizzo dell'ip esterno vi da soltanto il vantaggio di poter utilizzare l'app fuori casa.
+Il nostro consiglio è quello di non perdere tempo con l'ip esterno ma di **utilizzare il vostro ip interno** poiché è sicuramente più semplice e immediato. L'utilizzo dell'ip esterno vi da soltanto il vantaggio di poter utilizzare l'app da fuori casa, durante la fase di sviluppo questo vantaggio è totalmente inutile, vale la pena prendere in considerazione l'ip esterno una volta abbiate finito di 
