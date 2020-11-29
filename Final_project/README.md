@@ -95,4 +95,4 @@ Il modo più rapido per scoprire il vostro ip esterno è quello di andare in sit
 
 
 
-Il nostro consiglio è quello di non perdere tempo con l'ip esterno ma di **utilizzare il vostro ip interno** poiché è sicuramente più semplice e immediato. L'utilizzo dell'ip esterno vi da soltanto il vantaggio di poter utilizzare l'app da fuori casa, durante la fase di sviluppo questo vantaggio è totalmente inutile, vale la pena prendere in considerazione l'ip esterno una volta abbiate finito di 
+Il nostro consiglio è quello di non perdere tempo con l'ip esterno ma di **utilizzare il vostro ip interno** poiché è sicuramente più semplice e immediato. L'utilizzo dell'ip esterno vi da soltanto il vantaggio di poter utilizzare l'app da fuori casa, durante la fase di sviluppo questo vantaggio è totalmente inutile, vale la pena prendere in considerazione l'ip esterno una volta abbiate terminato di sviluppare il progetto per poterlo mostrare anche fuori casa.
