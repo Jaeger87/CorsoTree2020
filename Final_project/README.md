@@ -17,7 +17,8 @@ Tipo | Nome | Tipo Input | Input | Output | URI | Codice HTTP |Descrizione
 POST | signUpUser | Body Json | User { username, password, name, surname, gender, birthDate} | User | /user | 201 |Registra un utente alla piattaforma
 GET | logIn | QueryString | [username, password] | User | /login?username={username}&password={password} | 200 | Verifica la corrispondenza di email e password e restituisce l'utente corrispondente
 GET | getActiveEvents | | | List\<Event> | /events | 200 |Restituisce gli eventi disponibili a cui l'utente può registrarsi
-POST | signToEvent | PathParam | [eventid] | Event | /join/{eventid} | 202 | Registra l'utente ad un evento
+POST | joinEvent | PathParam | [eventid] | Event | /join/{eventid} | 201 | Registra l'utente ad un evento
+POST | unjoinEvent | PathParam | [eventid] | Event | /unjoin/{eventid} | 201 | Annulla la registrazione dell'utente ad un evento
 POST | createEvent | Body Json | Event {name, capacity, place, date} | Event | /event | 201 | Crea un evento sulla piattaforma
 GET | getEventDetails | PathParam | [eventid] | Event | /event/{eventid} | 200 | Restituisce le informazioni dettagliate di un evento.
 DELETE | cancelEvent | PathParam | [eventid] | Event | /event/{eventid} | 200 | Permette **solo** al creatore di un evento di annullarlo.
