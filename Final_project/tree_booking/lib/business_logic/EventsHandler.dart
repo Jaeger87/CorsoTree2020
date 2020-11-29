@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:sprintf/sprintf.dart';
 import 'package:tree_booking/entity/EventEntity.dart';
@@ -63,7 +65,33 @@ class EventsHandler {
     Dio dio = Utils.buildDio();
     try {
       Response r = (await dio.delete(sprintf(Configuration.CANCEL_EVENT, [eventId])));
-      return (r.statusCode != 200);
+      return (r.statusCode == 200);
+    } on DioError catch (e) {
+      //print("ERROR GETTING TIME" + e.toString());
+      //print(e.response?.data);
+      //print(e.message);
+      return false;
+    }
+  }
+
+  Future<bool> signToEvent(String eventId) async {
+    Dio dio = Utils.buildDio();
+    try {
+      Response r = (await dio.post(sprintf(Configuration.SIGN_TO_EVENT, [eventId])));
+      return (r.statusCode == 202);
+    } on DioError catch (e) {
+      //print("ERROR GETTING TIME" + e.toString());
+      //print(e.response?.data);
+      //print(e.message);
+      return false;
+    }
+  }
+
+  Future<bool> createEvent(EventEntity eventEntity) async {
+    Dio dio = Utils.buildDio();
+    try {
+      Response r = (await dio.post(Configuration.CREATE_EVENT, data: json.encode(eventEntity.toJson())));
+      return (r.statusCode == 201);
     } on DioError catch (e) {
       //print("ERROR GETTING TIME" + e.toString());
       //print(e.response?.data);
