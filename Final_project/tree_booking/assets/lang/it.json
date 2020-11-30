@@ -49,5 +49,12 @@
   "create_event": "Crea evento",
   "delete": "Cancella",
   "cannot_delete_event": "Impossibile cancellare l'evento",
-  "delete_event_ok": "Evento cancellato"
+  "delete_event_ok": "Evento cancellato",
+  "use_test_backend": "Usa Server di test",
+  "join": "Prenota",
+  "unjoin": "Abbandona",
+  "cannot_join_event": "Impossibile prenotare l'evento",
+  "join_event_ok": "Evento prenotato",
+  "cannot_unjoin_event": "Impossibile abbandonare l'evento",
+  "unjoin_event_ok": "Evento abbandonato"
 }

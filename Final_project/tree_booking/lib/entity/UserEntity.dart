@@ -34,8 +34,8 @@ class UserEntity {
     name: json["name"],
     username: json["username"],
     surname: json["surname"],
-    birthDate: DateTime.parse(json["birthDate"]),
-    gender: userGenderFromString(json["gender"]),
+    birthDate: json["birthDate"] != null ? DateTime.parse(json["birthDate"]) : null,
+    gender: json["gender"] != null ? userGenderFromString(json["gender"]) : null,
     password: json["password"],
   );
 

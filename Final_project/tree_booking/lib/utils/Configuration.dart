@@ -2,7 +2,7 @@ class Configuration {
 
   //APP CONFIGURATION
   static String APP_VERSION = "0.1";
-  static String SERVER_URL = "SERVER_URL";
+  static String SERVER_URL = "http://46.101.68.121:49785/";
 
   //ENDPOINT
   static String SIGNUP_USER = SERVER_URL + "user";

@@ -43,7 +43,7 @@ class _AvailableEventsState extends State<AvailableEvents> {
         child: SingleChildScrollView(
           physics: AlwaysScrollableScrollPhysics(),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.only(left: 20, right: 20, bottom: 70),
             child: Column(
               children: _buildEvents(),
             ),
@@ -62,7 +62,14 @@ class _AvailableEventsState extends State<AvailableEvents> {
       padding: EdgeInsets.only(bottom: 10),
       child: InkWell(
         onTap: () {
-          Get.to(EventDetails(e));
+          Get.to(EventDetails(e)).whenComplete(() {
+            EventsHandler().getActiveEvents().then((value) {
+              if(this.mounted && value != null)
+                setState(() {
+                  availableEvents = value;
+                });
+            });
+          });
         },
         child: Card(
           elevation: 5,

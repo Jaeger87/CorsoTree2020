@@ -38,6 +38,7 @@ dependencies:
   dio: 3.0.10
   flutter_spinkit: 4.1.2+1
   sprintf: 4.0.2
+  flushbar: 1.10.4
 
 
   # The following adds the Cupertino Icons font to your application.

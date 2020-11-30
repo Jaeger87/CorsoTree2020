@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tree_booking/ui/auth/LoginPage.dart';
 import 'package:tree_booking/ui/common/RoundedButton.dart';
 import 'package:tree_booking/ui/style/AppTheme.dart';
@@ -15,6 +16,15 @@ class ChooseServer extends StatefulWidget {
 class _ChooseServerState extends State<ChooseServer> {
   TextEditingController backendController = new TextEditingController();
   TextEditingController backendPortController = new TextEditingController();
+
+
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,6 +101,11 @@ class _ChooseServerState extends State<ChooseServer> {
             ),
           ),
           SizedBox(height: 50),
+          RoundedButton(MyLocalizations.of(context, "use_test_backend"), Colors.white, Colors.amber,
+              () {
+                setTestBackend();
+              }),
+          SizedBox(height: 20),
           RoundedButton(MyLocalizations.of(context, "next"), Colors.white, AppTheme.baseTheme,
               () {
                 setBackend();
@@ -112,6 +127,11 @@ class _ChooseServerState extends State<ChooseServer> {
     Configuration.SERVER_URL = backendController.text + ":" + backendPortController.text + "/";
     if(!Configuration.SERVER_URL.contains("http"))
       Configuration.SERVER_URL = "http://" + Configuration.SERVER_URL;
+    Get.to(LoginPage());
+    Utils.showOkSnackBar(MyLocalizations.of(context, "url_set"));
+  }
+
+  void setTestBackend() {
     Get.to(LoginPage());
     Utils.showOkSnackBar(MyLocalizations.of(context, "url_set"));
   }

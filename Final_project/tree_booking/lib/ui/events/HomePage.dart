@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tree_booking/ui/auth/LoginPage.dart';
 import 'package:tree_booking/ui/events/AvailableEvents.dart';
 import 'package:tree_booking/ui/events/CreateEvent.dart';
 import 'package:tree_booking/ui/events/MyEvents.dart';
 import 'package:tree_booking/ui/style/AppTheme.dart';
+import 'package:tree_booking/utils/CookiesManager.dart';
 import 'package:tree_booking/utils/MyLocalizations.dart';
 
 class HomePage extends StatefulWidget {
@@ -56,7 +58,12 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           centerTitle: true,
-
+          actions: [
+            IconButton(icon: Icon(Icons.exit_to_app, color: AppTheme.baseTheme,), onPressed: () {
+              CookiesManager.clear();
+              Get.offAll(LoginPage());
+            })
+          ],
         ),
         body: PageView(
             physics: NeverScrollableScrollPhysics(),

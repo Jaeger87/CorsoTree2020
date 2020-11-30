@@ -20,8 +20,8 @@ class EventsHandler {
       if (r.statusCode != 200)
         return [];
       List<EventEntity> events = [];
-      for(String s in r.data)
-        events.add(eventEntityFromJson(s));
+      for(var event in r.data)
+        events.add(eventEntityFromJson(json.encode(event)));
 
       return events;
     } on DioError catch (e) {
@@ -44,8 +44,8 @@ class EventsHandler {
       if (r.statusCode != 200)
         return [];
       List<EventEntity> events = [];
-      for(String s in r.data)
-        events.add(eventEntityFromJson(s));
+      for(var event in r.data)
+        events.add(eventEntityFromJson(json.encode(event)));
 
       return events;
     } on DioError catch (e) {
@@ -79,7 +79,7 @@ class EventsHandler {
     Dio dio = Utils.buildDio();
     try {
       Response r = (await dio.post(sprintf(Configuration.SIGN_TO_EVENT, [eventId])));
-      return (r.statusCode == 202);
+      return (r.statusCode == 201);
     } on DioError catch (e) {
       return false;
     }

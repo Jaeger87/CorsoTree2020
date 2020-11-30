@@ -274,7 +274,7 @@ class _CreateEventState extends State<CreateEvent> {
           ),
         ),
       ),
-      minDateTime: ZonedDateTime(Instant.now(), DateTimeZone.local).localDateTime.toDateTimeLocal(),
+      minDateTime: ZonedDateTime(Instant.now(), DateTimeZone.local).localDateTime.addDays(1).toDateTimeLocal(),
       maxDateTime: ZonedDateTime(Instant.now(), DateTimeZone.local).localDateTime.addMonths(6).toDateTimeLocal(),
       dateFormat: 'dd-MMMM-yyyy',
       onConfirm: (date, selIndex) {
@@ -310,7 +310,9 @@ class _CreateEventState extends State<CreateEvent> {
       name: nameController.text,
       place: addressController.text,
       capacity: int.parse(capacityController.text),
-      date: DateTime(date.year, date.month, date.minute, time.hour, time.minute)
+      date: DateTime(date.year, date.month, date.day, time.hour, time.minute),
+      owned: true,
+      joined: true
     );
     bool success = await EventsHandler().createEvent(eventEntity);
     Utils.hideCustomHud(context);

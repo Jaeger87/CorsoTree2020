@@ -140,8 +140,8 @@ class _LoginPageState extends State<LoginPage> {
         Utils.showErrorSnackBar(MyLocalizations.of(context, "cannot_login"));
         return;
       }
-      Get.to(HomePage());
       Utils.showOkSnackBar(MyLocalizations.of(context, "login_done"));
+      Get.offAll(HomePage());
   }
 
   void signup() {

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
@@ -11,10 +12,12 @@ import 'package:tree_booking/utils/XsProgressHudCustom.dart';
 class Utils {
 
   static void showCustomHud(BuildContext context) {
+    return;
     XsProgressHudCustom.show(context);
   }
 
   static void hideCustomHud(BuildContext context) {
+    return;
     XsProgressHudCustom.hide();
   }
 
@@ -63,20 +66,36 @@ class Utils {
     );*/
   }
 
-  static void showWarningSnackBar(String message, {String title, int durationSeconds}) {
-    if(message == null)
-      return;
+  static void showWarningSnackBar(String message,
+      {String title, int durationSeconds}) {
+    if (message == null) return;
+    Flushbar(
+      title: title,
+      message: message,
+      backgroundColor: Colors.amber,
+      margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
+      animationDuration: Duration(milliseconds: 400),
+      duration:  Duration(seconds: durationSeconds ?? 3),
+      barBlur: 10,
+      borderRadius: 10,
+      onTap: (Flushbar flushbar) {
+        flushbar?.dismiss();
+      },
+    )..show(Get.context);
 
-    Get.snackbar(
+    /*Get.snackbar(
         title,
         message,
         backgroundColor: Colors.amber,
         colorText: Colors.white,
         snackPosition: SnackPosition.BOTTOM,
         margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
-        barBlur: 10
-    );
-    return;
+        duration: Duration(seconds: durationSeconds ?? 5),
+        animationDuration: Duration(milliseconds: 400),
+        onTap: (GetBar snack) {
+          //snack?.dismiss();
+        },
+        barBlur: 10);*/
   }
 
   static void showOkSnackBar(String message,
@@ -86,21 +105,20 @@ class Utils {
         Function onTap,
         bool isDismissible}) {
     if (message == null) return;
-
-    Get.snackbar(title, message,
-        backgroundColor: Colors.green,
-        colorText: Colors.white,
-        snackPosition: position ?? SnackPosition.BOTTOM,
-        margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
-        barBlur: 10,
-        onTap: onTap ?? (GetBar snack) {
-          /*if(isDismissible)
-            snack?.dismiss();*/
-        },
-        animationDuration: Duration(milliseconds: 400),
-        duration: Duration(seconds: durationSeconds ?? 5),
-        isDismissible: isDismissible);
-    return;
+    Flushbar(
+      title:  title,
+      message: message,
+      backgroundColor: Colors.green,
+      margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
+      animationDuration: Duration(milliseconds: 400),
+      isDismissible: isDismissible ?? false,
+      barBlur: 10,
+      borderRadius: 10,
+      duration:  Duration(seconds: durationSeconds ?? 3),
+      onTap: onTap ?? (Flushbar flushbar) {
+        flushbar?.dismiss();
+      },
+    )..show(Get.context);
   }
 
   static Dio buildDio(){

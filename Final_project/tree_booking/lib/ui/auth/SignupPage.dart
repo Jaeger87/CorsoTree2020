@@ -257,38 +257,36 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
               SizedBox(height: 20),
-              Center(
-                child: Container(
-                  child: InkWell(
-                    onTap: () {
-                      _showDatePicker(context);
-                    },
-                    child: Text(
-                      birthDate != null ?
-                      formatter.format(birthDate) : MyLocalizations.of(context, "birthdate"),
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                        color: AppTheme.baseTheme,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.normal,
-                      ),
+              Container(
+                child: InkWell(
+                  onTap: () {
+                    _showDatePicker(context);
+                  },
+                  child: Text(
+                    birthDate != null ?
+                    formatter.format(birthDate) : MyLocalizations.of(context, "birthdate"),
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: AppTheme.baseTheme,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.normal,
                     ),
                   ),
-                )
+                ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 30),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    RoundedButton(MyLocalizations.of(context, "signup"), Colors.white, AppTheme.baseTheme,
-                            () {
-                          signup();
-                        }),
-                    SizedBox(width: width * 0.1),
                     RoundedButton(MyLocalizations.of(context, "back"), Colors.white, Colors.red,
                             () {
                           Get.back();
+                        }),
+                    SizedBox(width: width * 0.1),
+                    RoundedButton(MyLocalizations.of(context, "signup"), Colors.white, AppTheme.baseTheme,
+                            () {
+                          signup();
                         }),
                   ],
                 ),
@@ -361,6 +359,6 @@ class _SignupPageState extends State<SignupPage> {
       return;
     }
     Utils.showOkSnackBar(MyLocalizations.of(context, "signup_ok"));
-    Get.to(HomePage());
+    Get.offAll(HomePage());
   }
 }

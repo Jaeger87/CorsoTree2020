@@ -158,16 +158,27 @@ class _EventDetailsState extends State<EventDetails> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    RoundedButton(MyLocalizations.of(context, "back"), Colors.white, Colors.red,
+                   /* RoundedButton(MyLocalizations.of(context, "back"), Colors.white, Colors.red,
                             () {
                           Get.back();
                         }),
-                    SizedBox(width: width * 0.1),
+                    SizedBox(width: width * 0.1),*/
                     widget.eventEntity.owned ?
-                    RoundedButton(MyLocalizations.of(context, "delete"), Colors.white, AppTheme.baseTheme,
+                    RoundedButton(MyLocalizations.of(context, "delete"), Colors.white, Colors.red,
                             () {
                           deleteEvent();
                         }) : SizedBox(),
+                    SizedBox(width: widget.eventEntity.owned ? width * 0.1 : 0),
+                    widget.eventEntity.joined ?
+                    RoundedButton(MyLocalizations.of(context, "unjoin"), Colors.white, AppTheme.baseTheme,
+                            () {
+                          unjoinEvent();
+                        })
+                      :
+                    RoundedButton(MyLocalizations.of(context, "join"), Colors.white, AppTheme.baseTheme,
+                            () {
+                          joinEvent();
+                        }),
                   ],
                 ),
               ),
@@ -189,6 +200,33 @@ class _EventDetailsState extends State<EventDetails> {
     }
     Utils.showOkSnackBar(MyLocalizations.of(context, "delete_event_ok"));
     Get.back();
+  }
+
+  void joinEvent() async {
+    Utils.showCustomHud(context);
+    bool success = await EventsHandler().signToEvent(widget.eventEntity.eventid);
+    Utils.hideCustomHud(context);
+    if(!success) {
+      Utils.showErrorSnackBar(MyLocalizations.of(context, "cannot_join_event"));
+      return;
+    }
+     if(this.mounted)
+       setState(() {
+         widget.eventEntity.joined = true;
+       });
+    Utils.showOkSnackBar(MyLocalizations.of(context, "join_event_ok"));
+  }
+
+  void unjoinEvent() async {
+    Utils.showCustomHud(context);
+    bool success = await EventsHandler().unjoinEvent(widget.eventEntity.eventid);
+    Utils.hideCustomHud(context);
+    if(!success) {
+      Utils.showErrorSnackBar(MyLocalizations.of(context, "cannot_unjoin_event"));
+      return;
+    }
+    Get.back();
+    Utils.showOkSnackBar(MyLocalizations.of(context, "unjoin_event_ok"));
   }
 
 }

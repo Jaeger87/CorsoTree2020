@@ -30,22 +30,24 @@ class _UserEventsState extends State<UserEvents> {
   Widget build(BuildContext context) {
     return
       userEvents == null ? Utils.getProgressIndicator() :
-      RefreshIndicator(
-          onRefresh: () {
-            EventsHandler().getUserEvents().then((value) {
-              if (this.mounted && value != null)
-                setState(() {
-                  userEvents = value;
-                });
-            });
-            return Future.delayed(Duration(seconds: 0), () => true);
-          },
-        child: SingleChildScrollView(
-          physics: AlwaysScrollableScrollPhysics(),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              children: _buildEvents(),
+      Container(
+        child: RefreshIndicator(
+            onRefresh: () {
+              EventsHandler().getUserEvents().then((value) {
+                if (this.mounted && value != null)
+                  setState(() {
+                    userEvents = value;
+                  });
+              });
+              return Future.delayed(Duration(seconds: 0), () => true);
+            },
+          child: SingleChildScrollView(
+            physics: AlwaysScrollableScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.only(left: 20, right: 20, bottom: 70),
+              child: Column(
+                children: _buildEvents(),
+              ),
             ),
           ),
         ),
@@ -62,7 +64,14 @@ class _UserEventsState extends State<UserEvents> {
       padding: EdgeInsets.only(bottom: 10),
       child: InkWell(
         onTap: () {
-          Get.to(EventDetails(e));
+          Get.to(EventDetails(e)).whenComplete(() {
+            EventsHandler().getUserEvents().then((value) {
+              if(this.mounted && value != null)
+                setState(() {
+                  userEvents = value;
+                });
+            });
+          });
         },
         child: Card(
           elevation: 5,
