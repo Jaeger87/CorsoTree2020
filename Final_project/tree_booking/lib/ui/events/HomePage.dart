@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tree_booking/ui/events/AvailableEvents.dart';
+import 'package:tree_booking/ui/events/CreateEvent.dart';
 import 'package:tree_booking/ui/events/MyEvents.dart';
 import 'package:tree_booking/ui/style/AppTheme.dart';
 import 'package:tree_booking/utils/MyLocalizations.dart';
@@ -12,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Widget> pages = [AvailableEvents(), MyEvents()];
+  List<Widget> pages = [AvailableEvents(), UserEvents()];
   int _currentPage = 0;
   PageController _pageController;
 
@@ -27,6 +29,21 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         backgroundColor: Colors.white,
         bottomNavigationBar: _buildBottomNavBar(),
+        floatingActionButton: FloatingActionButton.extended(
+            onPressed: () {
+              Get.to(CreateEvent());
+            },
+            backgroundColor: AppTheme.baseTheme,
+            label: Text(
+              MyLocalizations.of(context, "create"),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.normal,
+                fontSize: 16.0,
+              ),
+            ),
+        ),
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,

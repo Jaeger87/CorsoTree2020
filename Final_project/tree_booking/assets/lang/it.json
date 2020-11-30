@@ -35,5 +35,19 @@
   "cannot_signup": "Errore nella registrazione",
   "signup_ok": "Registrazione effettuata",
   "available_events": "Eventi disponibili",
-  "my_events": "I miei eventi"
+  "my_events": "I miei eventi",
+  "places": "Posti",
+  "create": "Crea",
+  "tap_details": "Clicca per vedere i dettagli",
+  "address": "Indirizzo",
+  "insert_address": "Inserire un indirizzo",
+  "insert_places": "Inserire numero di posti",
+  "date": "Data",
+  "time": "Orario",
+  "cannot_create_event": "Impossibile creare l'evento",
+  "create_event_ok": "Evento creato",
+  "create_event": "Crea evento",
+  "delete": "Cancella",
+  "cannot_delete_event": "Impossibile cancellare l'evento",
+  "delete_event_ok": "Evento cancellato"
 }

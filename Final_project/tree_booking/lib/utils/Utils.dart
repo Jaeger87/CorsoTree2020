@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:tree_booking/utils/Configuration.dart';
 import 'package:tree_booking/utils/CookiesManager.dart';
@@ -123,5 +124,12 @@ class Utils {
             })
     );
     return dio;
+  }
+
+  static getProgressIndicator() {
+    return SpinKitDoubleBounce(
+      color: Colors.blue,
+      size: 35,
+    );
   }
 }

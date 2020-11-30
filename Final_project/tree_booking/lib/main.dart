@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
         //const Locale('en', 'US'), // English
         // ... other locales the app supports
       ],
-      home: HomePage(),
+      home: ChooseServer(),
     );
   }
 }

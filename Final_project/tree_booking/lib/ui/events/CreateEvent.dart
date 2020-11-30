@@ -2,29 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cupertino_date_picker_fork/flutter_cupertino_date_picker_fork.dart';
 import 'package:get/get.dart';
 import 'package:time_machine/time_machine.dart';
-import 'package:tree_booking/business_logic/AuthHandler.dart';
-import 'package:tree_booking/entity/UserEntity.dart';
-import 'package:tree_booking/entity/UserGender.dart';
+import 'package:tree_booking/business_logic/EventsHandler.dart';
+import 'package:tree_booking/entity/EventEntity.dart';
 import 'package:tree_booking/ui/common/RoundedButton.dart';
-import 'package:tree_booking/ui/events/HomePage.dart';
+import 'package:tree_booking/ui/events/EventDetails.dart';
 import 'package:tree_booking/ui/style/AppTheme.dart';
 import 'package:tree_booking/utils/MyLocalizations.dart';
-import 'package:tree_booking/utils/Utils.dart';
 import 'package:intl/intl.dart';
+import 'package:tree_booking/utils/Utils.dart';
 
-class SignupPage extends StatefulWidget {
+class CreateEvent extends StatefulWidget {
   @override
-  _SignupPageState createState() => _SignupPageState();
+  _CreateEventState createState() => _CreateEventState();
 }
 
-class _SignupPageState extends State<SignupPage> {
-  TextEditingController usernameController = new TextEditingController();
-  TextEditingController passwordController = new TextEditingController();
+class _CreateEventState extends State<CreateEvent> {
   TextEditingController nameController = new TextEditingController();
-  TextEditingController surnameController = new TextEditingController();
-  UserGender gender;
-  DateTime birthDate;
-  var formatter = new DateFormat('yyyy-MM-dd');
+  TextEditingController addressController = new TextEditingController();
+  TextEditingController capacityController = new TextEditingController();
+  DateTime date;
+  TimeOfDay time;
 
   @override
   Widget build(BuildContext context) {
@@ -32,88 +29,29 @@ class _SignupPageState extends State<SignupPage> {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        centerTitle: true,
+        title: Text(
+          MyLocalizations.of(context, "create_event"),
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: AppTheme.baseTheme,
+            fontStyle:  FontStyle.normal,
+            fontWeight: FontWeight.normal,
+            fontSize: 22.0,
+          ),
+        ),
+      ),
       body: Padding(
-        padding: EdgeInsets.only(top: AppBar().preferredSize.height, left: 20, right: 20),
+        padding: EdgeInsets.only(top: 20, left: 20, right: 20),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(child: Image.asset("assets/treelogo.png", width: width * 0.5, fit: BoxFit.cover,)),
-              SizedBox(height: 50),
-              Text(
-                MyLocalizations.of(context, "username"),
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18.0,
-                ),
-              ),
-              SizedBox(height: 10),
-              Center(
-                child: TextField(
-                  keyboardType: TextInputType.text,
-                  textInputAction: TextInputAction.next,
-                  controller: usernameController,
-                  maxLines: 1,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      color: AppTheme.baseTheme,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 16.0),
-                  decoration: InputDecoration(
-                    border: UnderlineInputBorder(),
-                    //border: InputBorder.none,
-                    hintText: MyLocalizations.of(context, "insert_username"),
-                    hintStyle: TextStyle(
-                        color: AppTheme.baseTheme,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 16.0),
-                  ),
-                  onEditingComplete: () {
-                    FocusScope.of(context).requestFocus(FocusNode());
-                  },
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                MyLocalizations.of(context, "password"),
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18.0,
-                ),
-              ),
-              SizedBox(height: 10),
-              Center(
-                child: TextField(
-                  keyboardType: TextInputType.visiblePassword,
-                  textInputAction: TextInputAction.next,
-                  controller: passwordController,
-                  maxLines: 1,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      color: AppTheme.baseTheme,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 16.0),
-                  decoration: InputDecoration(
-                    border: UnderlineInputBorder(),
-                    //border: InputBorder.none,
-                    hintText: MyLocalizations.of(context, "insert_password"),
-                    hintStyle: TextStyle(
-                        color: AppTheme.baseTheme,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 16.0),
-                  ),
-                  onEditingComplete: () {
-                    FocusScope.of(context).requestFocus(FocusNode());
-                  },
-                ),
-              ),
-              SizedBox(height: 10),
               Text(
                 MyLocalizations.of(context, "name"),
                 textAlign: TextAlign.left,
@@ -126,7 +64,7 @@ class _SignupPageState extends State<SignupPage> {
               SizedBox(height: 10),
               Center(
                 child: TextField(
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.text,
                   textInputAction: TextInputAction.next,
                   controller: nameController,
                   maxLines: 1,
@@ -151,7 +89,7 @@ class _SignupPageState extends State<SignupPage> {
               ),
               SizedBox(height: 10),
               Text(
-                MyLocalizations.of(context, "surname"),
+                MyLocalizations.of(context, "address"),
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   color: Colors.black,
@@ -162,9 +100,9 @@ class _SignupPageState extends State<SignupPage> {
               SizedBox(height: 10),
               Center(
                 child: TextField(
-                  keyboardType: TextInputType.visiblePassword,
+                  keyboardType: TextInputType.streetAddress,
                   textInputAction: TextInputAction.next,
-                  controller: surnameController,
+                  controller: addressController,
                   maxLines: 1,
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -173,7 +111,8 @@ class _SignupPageState extends State<SignupPage> {
                       fontSize: 16.0),
                   decoration: InputDecoration(
                     border: UnderlineInputBorder(),
-                    hintText: MyLocalizations.of(context, "insert_surname"),
+                    //border: InputBorder.none,
+                    hintText: MyLocalizations.of(context, "insert_address"),
                     hintStyle: TextStyle(
                         color: AppTheme.baseTheme,
                         fontWeight: FontWeight.normal,
@@ -186,7 +125,7 @@ class _SignupPageState extends State<SignupPage> {
               ),
               SizedBox(height: 10),
               Text(
-                MyLocalizations.of(context, "surname"),
+                MyLocalizations.of(context, "places"),
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   color: Colors.black,
@@ -196,59 +135,34 @@ class _SignupPageState extends State<SignupPage> {
               ),
               SizedBox(height: 10),
               Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    new Text(
-                      MyLocalizations.of(context, "male"),
-                      style: new TextStyle(fontSize: 16.0),
-                    ),
-                    new Radio<UserGender>(
-                      value: UserGender.MALE,
-                      groupValue: gender,
-                      onChanged: (userGender) {
-                        if(this.mounted)
-                          setState(() {
-                            gender = userGender;
-                          });
-                      },
-                    ),
-                    new Text(
-                      MyLocalizations.of(context, "female"),
-                      style: new TextStyle(
-                        fontSize: 16.0,
-                      ),
-                    ),
-                    new Radio<UserGender>(
-                      value: UserGender.FEMALE,
-                      groupValue: gender,
-                      onChanged: (userGender) {
-                        if(this.mounted)
-                          setState(() {
-                            gender = userGender;
-                          });
-                      },
-                    ),
-                    new Text(
-                      MyLocalizations.of(context, "other"),
-                      style: new TextStyle(fontSize: 16.0),
-                    ),
-                    new Radio<UserGender>(
-                      value: UserGender.OTHER,
-                      groupValue: gender,
-                      onChanged: (userGender) {
-                        if(this.mounted)
-                          setState(() {
-                            gender = userGender;
-                          });
-                      },
-                    ),
-                  ],
-                )
+                child: TextField(
+                  keyboardType: TextInputType.number,
+                  textInputAction: TextInputAction.next,
+                  controller: capacityController,
+                  maxLines: 1,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      color: AppTheme.baseTheme,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16.0),
+                  decoration: InputDecoration(
+                    border: UnderlineInputBorder(),
+                    //border: InputBorder.none,
+                    hintText: MyLocalizations.of(context, "insert_places"),
+                    hintStyle: TextStyle(
+                        color: AppTheme.baseTheme,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 16.0),
+                  ),
+                  onEditingComplete: () {
+                    FocusScope.of(context).requestFocus(FocusNode());
+                  },
+                ),
               ),
+              //DATE
               SizedBox(height: 10),
               Text(
-                MyLocalizations.of(context, "birthdate"),
+                MyLocalizations.of(context, "date"),
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   color: Colors.black,
@@ -257,38 +171,71 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
               SizedBox(height: 20),
-              Center(
-                child: Container(
-                  child: InkWell(
-                    onTap: () {
-                      _showDatePicker(context);
-                    },
-                    child: Text(
-                      birthDate != null ?
-                      formatter.format(birthDate) : MyLocalizations.of(context, "birthdate"),
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                        color: AppTheme.baseTheme,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.normal,
-                      ),
+              Container(
+                width: width,
+                child: InkWell(
+                  onTap: () {
+                    _showDatePicker(context);
+                  },
+                  child: Text(
+                    date != null ?
+                    DateFormat('dd/MM/yyyy').format(date) : MyLocalizations.of(context, "date"),
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: AppTheme.baseTheme,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.normal,
                     ),
                   ),
-                )
+                ),
               ),
+              SizedBox(height: 15),
+              Divider(height: 3, color: Colors.black,),
+              //TIME
+              SizedBox(height: 10),
+              Text(
+                MyLocalizations.of(context, "time"),
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
+              ),
+              SizedBox(height: 20),
+              Container(
+                width: width,
+                child: InkWell(
+                  onTap: () {
+                    _showTimePicker(context);
+                  },
+                  child: Text(
+                    time != null ?
+                    (time.hour == 0 ? "00" : time.hour.toString()) + ":" + (time.minute == 0 ? "00" : time.minute.toString()) : MyLocalizations.of(context, "time"),
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: AppTheme.baseTheme,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 15),
+              Divider(height: 3, color: Colors.black,),
               SizedBox(height: 50),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    RoundedButton(MyLocalizations.of(context, "signup"), Colors.white, AppTheme.baseTheme,
-                            () {
-                          signup();
-                        }),
-                    SizedBox(width: width * 0.1),
                     RoundedButton(MyLocalizations.of(context, "back"), Colors.white, Colors.red,
                             () {
                           Get.back();
+                        }),
+                    SizedBox(width: width * 0.1),
+                    RoundedButton(MyLocalizations.of(context, "create"), Colors.white, AppTheme.baseTheme,
+                            () {
+                          createEvent();
                         }),
                   ],
                 ),
@@ -327,40 +274,52 @@ class _SignupPageState extends State<SignupPage> {
           ),
         ),
       ),
-      minDateTime: DateTime(1900, 1, 1),
-      maxDateTime: ZonedDateTime(Instant.now(), DateTimeZone.local).localDateTime.subtractYears(18).toDateTimeLocal(),
+      minDateTime: ZonedDateTime(Instant.now(), DateTimeZone.local).localDateTime.toDateTimeLocal(),
+      maxDateTime: ZonedDateTime(Instant.now(), DateTimeZone.local).localDateTime.addMonths(6).toDateTimeLocal(),
       dateFormat: 'dd-MMMM-yyyy',
       onConfirm: (date, selIndex) {
         setState(() {
-          birthDate = date;
+          this.date = date;
         });
       },
 
     );
   }
 
-  void signup() async {
-    if(usernameController.text.isEmpty || passwordController.text.isEmpty || surnameController.text.isEmpty
-      || nameController.text.isEmpty || gender == null || birthDate == null) {
+  Future<TimeOfDay> _showTimePicker(BuildContext context) async {
+    TimeOfDay time =  await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay(hour: 18, minute: 0),
+      confirmText: MyLocalizations.of(context, "confirm"),
+      cancelText: MyLocalizations.of(context, "cancel"),
+    );
+    if(time != null && this.mounted)
+      setState(() {
+        this.time = time;
+      });
+  }
+
+  void createEvent() async {
+    if(nameController.text.isEmpty || addressController.text.isEmpty || capacityController.text.isEmpty
+        || nameController.text.isEmpty || date == null || time == null) {
       Utils.showErrorSnackBar(MyLocalizations.of(context, "fill_fields"));
       return;
     }
     Utils.showCustomHud(context);
-    UserEntity userEntity = new UserEntity(
+    EventEntity eventEntity = new EventEntity(
       name: nameController.text,
-      username: usernameController.text,
-      surname: surnameController.text,
-      password: passwordController.text,
-      gender: gender,
-      birthDate: birthDate
+      place: addressController.text,
+      capacity: int.parse(capacityController.text),
+      date: DateTime(date.year, date.month, date.minute, time.hour, time.minute)
     );
-    bool success = await AuthHandler().signup(userEntity);
+    bool success = await EventsHandler().createEvent(eventEntity);
     Utils.hideCustomHud(context);
     if(!success) {
-      Utils.showErrorSnackBar(MyLocalizations.of(context, "cannot_signup"));
+      Utils.showErrorSnackBar(MyLocalizations.of(context, "cannot_create_event"));
       return;
     }
-    Utils.showOkSnackBar(MyLocalizations.of(context, "signup_ok"));
-    Get.to(HomePage());
+    Utils.showOkSnackBar(MyLocalizations.of(context, "create_event_ok"));
+    Get.off(EventDetails(eventEntity));
   }
+
 }

@@ -44,7 +44,7 @@ class UserEntity {
     "name": name,
     "username": username,
     "surname": surname,
-    "birthDate": DateFormat('dd/MM/yyyy').format(birthDate),
+    "birthDate": DateFormat('yyyy-MM-dd').format(birthDate),
     "gender": userGenderToString(gender),
     "password": password,
   };

@@ -9,6 +9,11 @@ import 'package:tree_booking/utils/Configuration.dart';
 class EventsHandler {
 
   Future<List<EventEntity>> getActiveEvents() async {
+    /*return [
+      EventEntity(name: "prova", capacity: 20, date: DateTime.now(), eventid: "123", place: "via roma", owned: false),
+      EventEntity(name: "prova2", capacity: 20, date: DateTime.now(), eventid: "123", place: "via roma", owned: true),
+      
+    ];*/
     Dio dio = Utils.buildDio();
     try {
       Response r = (await dio.get(Configuration.GET_ACTIVE_EVENTS));
@@ -20,14 +25,19 @@ class EventsHandler {
 
       return events;
     } on DioError catch (e) {
-      //print("ERROR GETTING TIME" + e.toString());
-      //print(e.response?.data);
-      //print(e.message);
       return null;
     }
   }
 
   Future<List<EventEntity>> getUserEvents() async {
+    /*return [
+      EventEntity(name: "prova", capacity: 20, date: DateTime.now(), eventid: "123", place: "via roma", owned: false),
+      EventEntity(name: "prova2", capacity: 20, date: DateTime.now(), eventid: "123", place: "via roma", owned: true),
+      EventEntity(name: "prova", capacity: 20, date: DateTime.now(), eventid: "123", place: "via roma", owned: false),
+      EventEntity(name: "prova2", capacity: 20, date: DateTime.now(), eventid: "123", place: "via roma", owned: true),
+      EventEntity(name: "prova", capacity: 20, date: DateTime.now(), eventid: "123", place: "via roma", owned: false),
+      EventEntity(name: "prova2", capacity: 20, date: DateTime.now(), eventid: "123", place: "via roma", owned: true),
+    ];*/
     Dio dio = Utils.buildDio();
     try {
       Response r = (await dio.get(Configuration.GET_USER_EVENTS));
@@ -39,9 +49,6 @@ class EventsHandler {
 
       return events;
     } on DioError catch (e) {
-      //print("ERROR GETTING TIME" + e.toString());
-      //print(e.response?.data);
-      //print(e.message);
       return null;
     }
   }
@@ -54,9 +61,6 @@ class EventsHandler {
         return null;
       return EventEntity.fromJson(r.data);
     } on DioError catch (e) {
-      //print("ERROR GETTING TIME" + e.toString());
-      //print(e.response?.data);
-      //print(e.message);
       return null;
     }
   }
@@ -67,9 +71,6 @@ class EventsHandler {
       Response r = (await dio.delete(sprintf(Configuration.CANCEL_EVENT, [eventId])));
       return (r.statusCode == 200);
     } on DioError catch (e) {
-      //print("ERROR GETTING TIME" + e.toString());
-      //print(e.response?.data);
-      //print(e.message);
       return false;
     }
   }
@@ -80,9 +81,6 @@ class EventsHandler {
       Response r = (await dio.post(sprintf(Configuration.SIGN_TO_EVENT, [eventId])));
       return (r.statusCode == 202);
     } on DioError catch (e) {
-      //print("ERROR GETTING TIME" + e.toString());
-      //print(e.response?.data);
-      //print(e.message);
       return false;
     }
   }
@@ -93,9 +91,16 @@ class EventsHandler {
       Response r = (await dio.post(Configuration.CREATE_EVENT, data: json.encode(eventEntity.toJson())));
       return (r.statusCode == 201);
     } on DioError catch (e) {
-      //print("ERROR GETTING TIME" + e.toString());
-      //print(e.response?.data);
-      //print(e.message);
+      return false;
+    }
+  }
+
+  Future<bool> unjoinEvent(String eventId) async {
+    Dio dio = Utils.buildDio();
+    try {
+      Response r = (await dio.post(sprintf(Configuration.UNJOIN_EVENT, [eventId])));
+      return (r.statusCode == 201);
+    } on DioError catch (e) {
       return false;
     }
   }
