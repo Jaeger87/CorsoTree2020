@@ -24,7 +24,7 @@ DELETE | cancelEvent | PathParam | [eventid] | Event | /event/{eventid} | 200 | 
 GET | getUserEvents | | | List\<Event> | /user/events | 200 | Restituisce una lista con gli eventi creati dall'utente e quelli a cui ha partecipato. Solo gli eventi futuri, non quelli passati
 
 Questi endpoint inviano e ricevono i dati sotto forma di Json e la sessione con l'utente è gestita tramite cookie.\
-Tutti gli endpoint devono far uso dei cookie per capire da quale utente sta arrivando la request.
+Tutti gli endpoint devono far uso del cookie per capire da quale utente sta arrivando la request, questo cookie viene settata dal backend quando l'utente si logga e si slogga dal servizio.
 
 &nbsp;
 ## Uno User è caratterizzato dai seguenti campi:
@@ -36,7 +36,7 @@ name | String | Nome dell'utente
 surname | String | Cognome dell'utente
 birthDate | Date | Data di nascita
 gender | Enum | [male, female, other]
-password | String | Password dell'utente (non memorizzarle in chiaro)
+password | String | Password dell'utente (Presente soltanto nella chiamata di registrazione dell'utente)
 
 
 
@@ -46,6 +46,7 @@ password | String | Password dell'utente (non memorizzarle in chiaro)
 Campo | Tipo | Descrizione
 ------------ |-------- |-------------
 eventid | UUID | ID univoco dell'evento
+owned | String | sopranome del creatore dell'evento
 name | String | Nome dell'evento
 date | Timestamp | Data e ora di quando si svolgerà l'evento
 place | String | Dove si svolgerà l'evento
