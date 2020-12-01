@@ -24,100 +24,103 @@ class _LoginPageState extends State<LoginPage> {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: true,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(child: Image.asset("assets/treelogo.png", width: width * 0.7, fit: BoxFit.cover,)),
-            SizedBox(height: height * 0.1),
-            Text(
-              MyLocalizations.of(context, "username"),
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 18.0,
-              ),
-            ),
-            SizedBox(height: 10),
-            Center(
-              child: TextField(
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                controller: usernameController,
-                maxLines: 1,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(child: Image.asset("assets/treelogo.png", width: width * 0.7, fit: BoxFit.cover,)),
+              SizedBox(height: height * 0.1),
+              Text(
+                MyLocalizations.of(context, "username"),
                 textAlign: TextAlign.left,
                 style: TextStyle(
-                    color: AppTheme.baseTheme,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16.0),
-                decoration: InputDecoration(
-                  border: UnderlineInputBorder(),
-                  //border: InputBorder.none,
-                  hintText: MyLocalizations.of(context, "insert_username"),
-                  hintStyle: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
+              ),
+              SizedBox(height: 10),
+              Center(
+                child: TextField(
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.next,
+                  controller: usernameController,
+                  maxLines: 1,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
                       color: AppTheme.baseTheme,
                       fontWeight: FontWeight.normal,
                       fontSize: 16.0),
+                  decoration: InputDecoration(
+                    border: UnderlineInputBorder(),
+                    //border: InputBorder.none,
+                    hintText: MyLocalizations.of(context, "insert_username"),
+                    hintStyle: TextStyle(
+                        color: AppTheme.baseTheme,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 16.0),
+                  ),
+                  onEditingComplete: () {
+                    FocusScope.of(context).requestFocus(FocusNode());
+                  },
                 ),
-                onEditingComplete: () {
-                  FocusScope.of(context).requestFocus(FocusNode());
-                },
               ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              MyLocalizations.of(context, "password"),
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 18.0,
-              ),
-            ),
-            SizedBox(height: 10),
-            Center(
-              child: TextField(
-                keyboardType: TextInputType.visiblePassword,
-                textInputAction: TextInputAction.done,
-                controller: passwordController,
-                maxLines: 1,
+              SizedBox(height: 10),
+              Text(
+                MyLocalizations.of(context, "password"),
                 textAlign: TextAlign.left,
                 style: TextStyle(
-                    color: AppTheme.baseTheme,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16.0),
-                decoration: InputDecoration(
-                  border: UnderlineInputBorder(),
-                  //border: InputBorder.none,
-                  hintText: MyLocalizations.of(context, "insert_password"),
-                  hintStyle: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
+              ),
+              SizedBox(height: 10),
+              Center(
+                child: TextField(
+                  keyboardType: TextInputType.visiblePassword,
+                  textInputAction: TextInputAction.done,
+                  controller: passwordController,
+                  maxLines: 1,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
                       color: AppTheme.baseTheme,
                       fontWeight: FontWeight.normal,
                       fontSize: 16.0),
-                ),
-                onEditingComplete: () {
-                  login();
-                },
-              ),
-            ),
-            SizedBox(height: 50),
-            Center(
-              child: RoundedButton(MyLocalizations.of(context, "login"), Colors.white, AppTheme.baseTheme,
-                      () {
+                  decoration: InputDecoration(
+                    border: UnderlineInputBorder(),
+                    //border: InputBorder.none,
+                    hintText: MyLocalizations.of(context, "insert_password"),
+                    hintStyle: TextStyle(
+                        color: AppTheme.baseTheme,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 16.0),
+                  ),
+                  onEditingComplete: () {
                     login();
-                  }),
-            ),
-            SizedBox(height: 50),
-            Center(
-              child: RoundedButton(MyLocalizations.of(context, "signup"), Colors.white, Colors.red,
-                      () {
-                    signup();
-                  }),
-            )
-          ],
+                  },
+                ),
+              ),
+              SizedBox(height: 50),
+              Center(
+                child: RoundedButton(MyLocalizations.of(context, "login"), Colors.white, AppTheme.baseTheme,
+                        () {
+                      login();
+                    }),
+              ),
+              SizedBox(height: 50),
+              Center(
+                child: RoundedButton(MyLocalizations.of(context, "signup"), Colors.white, Colors.red,
+                        () {
+                      signup();
+                    }),
+              )
+            ],
+          ),
         ),
       ),
     );
