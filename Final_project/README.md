@@ -47,7 +47,7 @@ password | String | Password dell'utente (Presente soltanto nella chiamata di re
 Campo | Tipo | Descrizione
 ------------ |-------- |-------------
 eventid | UUID | ID univoco dell'evento
-owned | String | sopranome del creatore dell'evento
+owned | Boolean | sopranome del creatore dell'evento
 name | String | Nome dell'evento
 date | Timestamp | Data e ora di quando si svolgerà l'evento
 place | String | Dove si svolgerà l'evento
